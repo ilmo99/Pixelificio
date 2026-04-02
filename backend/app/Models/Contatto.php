@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contatto extends Model
 {
-    use CrudTrait;
+	use CrudTrait;
 
-    protected $fillable = ['email', 'oggetto', 'messaggio'];
+	protected $fillable = ["email", "oggetto", "messaggio"];
 
-    protected $table = 'contatti';
+	protected $table = "contatti";
 
-    public function getDisplayAttribute()
-    {
-        return $this->email;
-    }
+	public function getDisplayAttribute()
+	{
+		return $this->email;
+	}
 }

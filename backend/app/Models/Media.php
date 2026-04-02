@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Media extends Model
 {
-    use CrudTrait, StorableMedia;
+	use CrudTrait, StorableMedia;
 
 	protected $fillable = [
 		"title",

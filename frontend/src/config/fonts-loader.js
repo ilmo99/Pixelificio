@@ -1,6 +1,6 @@
 // import { FontsLoader } from "@/components/utilities/metadata-setup"; // File import statement
 
-import { Lora, Manrope } from "next/font/google"; // Loads Google Fonts using built-in API
+import { Lora, Manrope, Inter } from "next/font/google"; // Loads Google Fonts using built-in API
 // import localFont from "next/font/local"; // Loads self-hosted fonts
 
 export const manrope = Manrope({

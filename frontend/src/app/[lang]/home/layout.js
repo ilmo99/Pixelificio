@@ -1,7 +1,6 @@
 // Server-Side Rendering (React generates HTML before hydration)
 //
 // import HomeLayout from "@/layout/home"; // File import statement
-
 import * as constants from "@/config/constants"; // Global constants shared across the app
 import "./layout.scss";
 
@@ -15,7 +14,7 @@ export default async function HomeLayout({ children, params }) {
 
 	// Fetch data from the API with language header
 	// const dataResponse = await fetch(`${constants.BASE_URL}/api/${lang}/<route>`, {
-	// 	method: "GET",
+	// method: "GET",
 	// 	credentials: "include",
 	// 	headers: {
 	// 		"Content-Type": "application/json",
@@ -26,8 +25,7 @@ export default async function HomeLayout({ children, params }) {
 
 	return (
 		<>
-			<div className="home_layout grid_cont footer order-2 order-xl-0">{/* content */}</div>
-
+			<div className="home_layout grid_cont footer order-2 order-xl-0"></div>
 			<div className="home_layout grid_cont content order-1">{children}</div>
 		</>
 	);

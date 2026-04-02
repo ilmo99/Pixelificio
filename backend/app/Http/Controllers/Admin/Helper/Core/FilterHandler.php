@@ -257,7 +257,7 @@ class FilterHandler
 		$columnType = Schema::getColumnType($table, $key);
 
 		// Check if column is nullable
-		$database = config('database.connections.mysql.database');
+		$database = config("database.connections.mysql.database");
 		$isNullable =
 			DB::table("INFORMATION_SCHEMA.COLUMNS")
 				->where("TABLE_SCHEMA", $database)
@@ -369,7 +369,7 @@ class FilterHandler
 		$columnType = Schema::getColumnType($table, $key);
 
 		// Check if column is nullable
-		$database = config('database.connections.mysql.database');
+		$database = config("database.connections.mysql.database");
 		$isNullable =
 			DB::table("INFORMATION_SCHEMA.COLUMNS")
 				->where("TABLE_SCHEMA", $database)

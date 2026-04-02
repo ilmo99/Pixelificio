@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Metadata extends Model
 {
-    use CrudTrait;
+	use CrudTrait;
 
-    protected $fillable = ['it', 'en', 'image_path', 'code', 'page_id'];
+	protected $fillable = ["it", "en", "image_path", "code", "page_id"];
 
-    public function page()
-    {
-        return $this->belongsTo(Page::class);
-    }
+	public function page()
+	{
+		return $this->belongsTo(Page::class);
+	}
 
-    public function getDisplayAttribute()
-    {
-        return $this->code;
-    }
+	public function getDisplayAttribute()
+	{
+		return $this->code;
+	}
 }

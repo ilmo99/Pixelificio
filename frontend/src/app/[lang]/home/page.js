@@ -35,6 +35,10 @@ export default async function HomePage({ params }) {
 				<section className="cont_space_1">
 					<div className="cont_mw_1">
 						{/* <NamedExportModule idModule="nameModulePage" dataModule={dataModule} /> */}
+						<h1 className="h1">
+							Pixelificio is where digital images are reduced to their essential units and rebuilt as physical,
+							light-based compositions.
+						</h1>
 					</div>
 				</section>
 			</div>

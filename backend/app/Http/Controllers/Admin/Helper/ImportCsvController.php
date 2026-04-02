@@ -890,7 +890,7 @@ class ImportCsvController extends Controller
 		array $summary
 	): void {
 		// Check if encryption is enabled via LOG_CHANNEL
-		$shouldEncrypt = config('logging.channels.encrypted_daily.enabled');
+		$shouldEncrypt = config("logging.channels.encrypted_daily.enabled");
 		$encryptionService = $shouldEncrypt ? app(LogEncryptionService::class) : null;
 
 		// Save summary file (encrypted only if LOG_CHANNEL=encrypted_daily)

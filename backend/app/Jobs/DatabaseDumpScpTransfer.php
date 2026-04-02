@@ -217,7 +217,13 @@ class DatabaseDumpScpTransfer implements ShouldQueue
 		}
 
 		if (!file_exists($knownHostsPath)) {
-			throw new \RuntimeException("known_hosts file not found: {$knownHostsPath}. Create it with: ssh-keyscan -p " . config("ssh.port") . " " . config("ssh.host") . " >> {$knownHostsPath}");
+			throw new \RuntimeException(
+				"known_hosts file not found: {$knownHostsPath}. Create it with: ssh-keyscan -p " .
+					config("ssh.port") .
+					" " .
+					config("ssh.host") .
+					" >> {$knownHostsPath}"
+			);
 		}
 
 		$command = [
@@ -257,7 +263,13 @@ class DatabaseDumpScpTransfer implements ShouldQueue
 		}
 
 		if (!file_exists($knownHostsPath)) {
-			throw new \RuntimeException("known_hosts file not found: {$knownHostsPath}. Create it with: ssh-keyscan -p " . config("ssh.port") . " " . config("ssh.host") . " >> {$knownHostsPath}");
+			throw new \RuntimeException(
+				"known_hosts file not found: {$knownHostsPath}. Create it with: ssh-keyscan -p " .
+					config("ssh.port") .
+					" " .
+					config("ssh.host") .
+					" >> {$knownHostsPath}"
+			);
 		}
 
 		$remotePath = rtrim($this->remoteDir(), "/") . "/" . $remoteFileName;
@@ -301,7 +313,13 @@ class DatabaseDumpScpTransfer implements ShouldQueue
 		}
 
 		if (!file_exists($knownHostsPath)) {
-			throw new \RuntimeException("known_hosts file not found: {$knownHostsPath}. Create it with: ssh-keyscan -p " . config("ssh.port") . " " . config("ssh.host") . " >> {$knownHostsPath}");
+			throw new \RuntimeException(
+				"known_hosts file not found: {$knownHostsPath}. Create it with: ssh-keyscan -p " .
+					config("ssh.port") .
+					" " .
+					config("ssh.host") .
+					" >> {$knownHostsPath}"
+			);
 		}
 
 		$remoteDir = $this->remoteDir();
