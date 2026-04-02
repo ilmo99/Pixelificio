@@ -103,9 +103,9 @@
 
 // Scrollbar customization. <<OUT>>
 
-$font_title: var(--font-manrope);
-$font_subtitle: var(--font-manrope);
-$font_body: var(--font-lora);
+$font_title: var(--instrument-sans);
+$font_subtitle: var(--instrument-sans);
+$font_body: var(--instrument-sans);
 
 body {
 	font-family: $font_body;
@@ -164,10 +164,17 @@ $reference-vw-max: 80em; // Maximum REFERENCE viewport width
 // HERO TITLE (article-list) | Manrope (bold) | fs: 40px~60px/2.5rem~3.75rem | lh: 64px~70px/1.35~1.16
 
 // [ROLE (scope)] | [font-family] ([font-weight]) | fs: [min]px~[max]px/[min]rem~[max]rem | lh: [min]px~[max]px/[min-ratio]~[max-ratio]
+a,
+.a {
+	color: grey;
+	font-family: $font_body;
+}
+
 h1,
 .h1 {
 	font-family: $font_title;
-	font-weight: 500;
+	font-weight: 400;
+	letter-spacing: -0.2rem;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -176,10 +183,10 @@ h1,
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
 		$font-size-min: 4rem, // `font-size` on mobile viewport (< 575.98px)
-		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
+		$line-height-mobile: 1, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
 		$font-size-max: 4rem, // `font-size` on desktop viewport (> 576px)
-		$line-height-desktop: 1.2, // `line-height` multiplier on desktop viewport (> 576px)
+		$line-height-desktop: 1, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
 		// $important: "!important", // uncomment to add `!important` to the string
@@ -190,7 +197,8 @@ h1,
 h2,
 .h2 {
 	font-family: $font_title;
-	font-weight: 500;
+	font-weight: 400;
+	letter-spacing: -0.1rem;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -198,10 +206,10 @@ h2,
 		$source-vw-min: $reference-vw-min, // Minimum REFERENCE viewport width
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
-		$font-size-min: 2.31rem, // `font-size` on mobile viewport (< 575.98px)
+		$font-size-min: 1.8rem, // `font-size` on mobile viewport (< 575.98px)
 		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
-		$font-size-max: 2.31rem, // `font-size` on desktop viewport (> 576px)
+		$font-size-max: 1.8rem, // `font-size` on desktop viewport (> 576px)
 		$line-height-desktop: 1.2, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
@@ -213,7 +221,8 @@ h2,
 h3,
 .h3 {
 	font-family: $font_title;
-	font-weight: 700;
+	font-weight: 600;
+	letter-spacing: -0.1rem;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -221,10 +230,10 @@ h3,
 		$source-vw-min: $reference-vw-min, // Minimum REFERENCE viewport width
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
-		$font-size-min: 1.87rem, // `font-size` on mobile viewport (< 575.98px)
+		$font-size-min: 1.3rem, // `font-size` on mobile viewport (< 575.98px)
 		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
-		$font-size-max: 1.88rem, // `font-size` on desktop viewport (> 576px)
+		$font-size-max: 1.3rem, // `font-size` on desktop viewport (> 576px)
 		$line-height-desktop: 1.2, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
@@ -236,7 +245,9 @@ h3,
 h4,
 .h4 {
 	font-family: $font_title;
-	font-weight: 700;
+	font-weight: 600;
+	color: gray;
+	letter-spacing: -0.1rem;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -244,10 +255,10 @@ h4,
 		$source-vw-min: $reference-vw-min, // Minimum REFERENCE viewport width
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
-		$font-size-min: 1.35rem, // `font-size` on mobile viewport (< 575.98px)
+		$font-size-min: 1.3rem, // `font-size` on mobile viewport (< 575.98px)
 		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
-		$font-size-max: 1.5rem, // `font-size` on desktop viewport (> 576px)
+		$font-size-max: 1.3rem, // `font-size` on desktop viewport (> 576px)
 		$line-height-desktop: 1.2, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
@@ -259,7 +270,7 @@ h4,
 h5,
 .h5 {
 	font-family: $font_title;
-	font-weight: 700;
+	font-weight: 400;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -267,10 +278,10 @@ h5,
 		$source-vw-min: $reference-vw-min, // Minimum REFERENCE viewport width
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
-		$font-size-min: 1rem, // `font-size` on mobile viewport (< 575.98px)
+		$font-size-min: 1.2rem, // `font-size` on mobile viewport (< 575.98px)
 		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
-		$font-size-max: 1rem, // `font-size` on desktop viewport (> 576px)
+		$font-size-max: 1.2rem, // `font-size` on desktop viewport (> 576px)
 		$line-height-desktop: 1.2, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
@@ -305,7 +316,7 @@ h6,
 p {
 	font-family: $font_body;
 	font-weight: 400;
-	letter-spacing: 0.2px;
+	letter-spacing: -0.1px;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -1463,7 +1474,7 @@ ul {
 }
 
 .cont_mw_1 {
-	max-width: 1500px;
+	max-width: 1280px;
 	margin: 0 auto;
 	// margin-right: auto;
 	// margin-left: auto;

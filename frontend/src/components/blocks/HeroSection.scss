@@ -1,15 +1,12 @@
-// @use "@/page/home" as *; // File import statement
+// @use "@/components/<subfolder>/<filename>" as *; // File import statement
 
 // >>> Controllers — START
 @use "@/scss/controllers/dynamics" as *; // controllers for mixins and variables
-@use "@/scss/controllers/extends" as *; // controller for modules
 // <<<<< Controllers — END
 
-.home_page {
-	height: 100vh;
-	background: $color_white;
-	.obj_proj_title {
-		border-top: 1px solid black;
+.hero_section_component {
+	.obj_hero_txt {
+		max-width: 60%;
 	}
 }
 
@@ -23,27 +20,27 @@
 ////////////////////////
 
 @media (max-width: 1399.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (max-width: 1199.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (max-width: 991.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (max-width: 767.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (max-width: 575.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
@@ -54,32 +51,27 @@
 ////////////////////
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
-	.home_page {
-	}
-}
-
-@media (min-width: 1400px) and (max-width: 1599.98px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
@@ -90,27 +82,27 @@
 ////////////////////////
 
 @media (min-width: 576px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 768px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 992px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 1200px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
 @media (min-width: 1400px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
@@ -121,7 +113,7 @@
 //////////////////////
 
 @media (max-height: 400px) and (orientation: landscape) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
@@ -132,7 +124,7 @@
 ///////////////////////
 
 @media (width: 1024px) and (height: 1366px) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
@@ -143,7 +135,7 @@
 /////////////////////////////
 
 @supports (-webkit-touch-callout: none) and (hover: none) and (pointer: coarse) {
-	.home_page {
+	.hero_section_component {
 	}
 }
 
@@ -154,6 +146,6 @@
 /////////////////////////
 
 @supports (-webkit-touch-callout: default) and (hover: hover) and (pointer: fine) {
-	.home_page {
+	.hero_section_component {
 	}
 }

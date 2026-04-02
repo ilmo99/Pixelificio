@@ -135,7 +135,8 @@ export default async function RootLayout({ children, params }) {
 							</div>
 							{/* PROJECT UTILITIES (scripts | cookies) */}
 							<GlobalScripts />
-							<KlaroCookieConsent config={klaroConfig} />z{/* USER PROMPTS (modals | toasts) */}
+							<KlaroCookieConsent config={klaroConfig} />
+							{/* USER PROMPTS (modals | toasts) */}
 							<ForgotPasswordComponent lang={lang} />
 							<PasswordResetComponent lang={lang} />
 							<RegisterComponent lang={lang} />

@@ -1,6 +1,6 @@
 // import { FontsLoader } from "@/components/utilities/metadata-setup"; // File import statement
 
-import { Lora, Manrope, Inter } from "next/font/google"; // Loads Google Fonts using built-in API
+import { Lora, Manrope, Instrument_Sans } from "next/font/google"; // Loads Google Fonts using built-in API
 // import localFont from "next/font/local"; // Loads self-hosted fonts
 
 export const manrope = Manrope({
@@ -14,6 +14,15 @@ export const manrope = Manrope({
 
 export const lora = Lora({
 	variable: "--font-lora", // Creates global CSS variable to reference font in stylesheets
+	weight: ["400", "500", "600", "700"], // Declares all available `font-weight` values
+	style: "normal", // Specifies `font-style`; valid values are "normal" and "italic"
+	subsets: ["latin"], // Limits Unicode character range to reduce file size (Google Fonts only)
+	display: "swap", // Shows fallback font immediately, swaps when loaded
+	adjustFontFallback: true, // Aligns fallback metrics to reduce layout shift (CLS) [Google Fonts only]
+});
+
+export const instrument_sans = Instrument_Sans({
+	variable: "--instrument-sans", // Creates global CSS variable to reference font in stylesheets
 	weight: ["400", "500", "600", "700"], // Declares all available `font-weight` values
 	style: "normal", // Specifies `font-style`; valid values are "normal" and "italic"
 	subsets: ["latin"], // Limits Unicode character range to reduce file size (Google Fonts only)
