@@ -1,6 +1,6 @@
 // "use client"; // marks module for full browser execution
 //
-// import { HeroSectionComponent } from "@/components/<filename>"; // File import statement
+// import { HeroSectionComponent } from "@/components/blocks/HeroSection"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
@@ -60,7 +60,7 @@ export async function HeroSectionComponent({ props }) {
 			<div className="hero_section_component">
 				<div className="block_cont">
 					<div className="block_wrap flex-column">
-						<div className="el_img py-3">
+						<div className="el_img d-none d-md-block py-3">
 							<img src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
 						<div className="el_text obj_hero_txt py-3">

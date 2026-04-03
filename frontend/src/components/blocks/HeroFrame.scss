@@ -1,0 +1,152 @@
+// @use "@/components/<subfolder>/<filename>" as *; // File import statement
+
+// >>> Controllers — START
+@use "@/scss/controllers/dynamics" as *; // controllers for mixins and variables
+// <<<<< Controllers — END
+
+.hero_frame_component {
+	.obj_hero_txt {
+		a {
+		}
+	}
+}
+
+/////
+////
+/*/ ==================== @media ==================== /*/
+/////////////
+////////////
+////////////////////////
+/* @media (max-width) */
+////////////////////////
+
+@media (max-width: 1399.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (max-width: 991.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (max-width: 767.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (max-width: 575.98px) {
+	.hero_frame_component {
+	}
+}
+
+// -------------- //
+
+////////////////////
+/* @media between */
+////////////////////
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+	.hero_frame_component {
+	}
+}
+
+// ------------------ //
+
+////////////////////////
+/* @media (min-width) */
+////////////////////////
+
+@media (min-width: 576px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 768px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 992px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 1200px) {
+	.hero_frame_component {
+	}
+}
+
+@media (min-width: 1400px) {
+	.hero_frame_component {
+	}
+}
+
+// ---------------- //
+
+//////////////////////
+/* mobile landscape */
+//////////////////////
+
+@media (max-height: 400px) and (orientation: landscape) {
+	.hero_frame_component {
+	}
+}
+
+// ----------------- //
+
+///////////////////////
+/* iPad Pro portrait */
+///////////////////////
+
+@media (width: 1024px) and (height: 1366px) {
+	.hero_frame_component {
+	}
+}
+
+// ----------------------- //
+
+/////////////////////////////
+/* all browsers (iOS only) */
+/////////////////////////////
+
+@supports (-webkit-touch-callout: none) and (hover: none) and (pointer: coarse) {
+	.hero_frame_component {
+	}
+}
+
+// ------------------- //
+
+/////////////////////////
+/* Safari (MacOS only) */
+/////////////////////////
+
+@supports (-webkit-touch-callout: default) and (hover: hover) and (pointer: fine) {
+	.hero_frame_component {
+	}
+}

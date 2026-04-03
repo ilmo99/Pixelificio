@@ -1,6 +1,6 @@
 // "use client"; // marks module for full browser execution
 //
-// import { ProjectSectionComponent } from "@/components/<filename>"; // File import statement
+// import { GridComponent } from "@/components/<filename>"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
@@ -43,13 +43,13 @@
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
 
 // 4. Relative internal (same directory)
-import "./ProjectSection.scss";
+import "./Grid.scss";
 
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export async function ProjectSectionComponent({ imgurl, projtitle, projsub, projabs }) {
+export async function GridComponent({ props }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -57,37 +57,8 @@ export async function ProjectSectionComponent({ imgurl, projtitle, projsub, proj
 
 	return (
 		<>
-			<div className="project_section_component">
-				<div className="block_cont">
-					<div className="size_wrap py-8">
-						<div className="row">
-							<div className="col-3"></div>
-							<div className="col-9">
-								<img className="w-50" src={imgurl}></img>
-							</div>
-						</div>
-						<div className="row py-6">
-							<div className="col-12 col-md-6 row">
-								<div className="col-3 col-md-2">
-									<h4>Project</h4>
-								</div>
-								<div className="col-9 col-md-8">
-									<h3>{projtitle}</h3>
-									<h4 className="py-1">{projsub}</h4>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 row justify-content-end">
-								<div className="w-100 w-md-50">
-									<h5 className=" pb-3">{projabs}</h5>
-									<a className="d-flex">
-										See Project
-										<img src="/images/logos/arrow.svg" className="ps-2" />
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div className="grid_component">
+				<div className="size_cont"></div>
 			</div>
 		</>
 	);

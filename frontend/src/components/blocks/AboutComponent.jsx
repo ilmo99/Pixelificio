@@ -1,6 +1,6 @@
 // "use client"; // marks module for full browser execution
 //
-// import { ProjectSectionComponent } from "@/components/<filename>"; // File import statement
+// import { AboutComponent } from "@/components/blocks/AboutComponent"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
@@ -43,13 +43,13 @@
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
 
 // 4. Relative internal (same directory)
-import "./ProjectSection.scss";
+import "./AboutComponent.scss";
 
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export async function ProjectSectionComponent({ imgurl, projtitle, projsub, projabs }) {
+export async function AboutComponent({ props }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -57,32 +57,37 @@ export async function ProjectSectionComponent({ imgurl, projtitle, projsub, proj
 
 	return (
 		<>
-			<div className="project_section_component">
-				<div className="block_cont">
-					<div className="size_wrap py-8">
-						<div className="row">
-							<div className="col-3"></div>
-							<div className="col-9">
-								<img className="w-50" src={imgurl}></img>
-							</div>
+			<div className="About_component">
+				<div className="size_cont">
+					<div className="block_wrap">
+						<div className="el_img d-none d-md-block py-3">
+							<img src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
-						<div className="row py-6">
-							<div className="col-12 col-md-6 row">
-								<div className="col-3 col-md-2">
-									<h4>Project</h4>
-								</div>
-								<div className="col-9 col-md-8">
-									<h3>{projtitle}</h3>
-									<h4 className="py-1">{projsub}</h4>
-								</div>
+						<div className="el_text obj_hero_txt col-lg-10 py-3">
+							<h1>
+								Our team may be just me, but together we make pixels, circuits, and ideas come to life:
+								mostly with soldering and coffee.
+							</h1>
+						</div>
+						<div className="row">
+							<div className="el_num col-md-4">
+								<p className="biggest">1659</p>
+								<p>Glowing pixels in our frames</p>
 							</div>
-							<div className="col-12 col-md-6 row justify-content-end">
-								<div className="w-100 w-md-50">
-									<h5 className=" pb-3">{projabs}</h5>
-									<a className="d-flex">
-										See Project
-										<img src="/images/logos/arrow.svg" className="ps-2" />
-									</a>
+							<div className="el_num pt-4 pt-md-0 ps-md-4 col-md-4">
+								<p className="biggest">6</p>
+								<p>Crafted frames</p>
+							</div>
+							<div className="pt-4 pt-md-0 ps-md-4 col-md-4">
+								<p className="biggest">2</p>
+								<p>Arduino boards sacrificed</p>
+							</div>
+							<div className="el_team row pt-4">
+								<div className="col-md-6">
+									<h1>Our Team</h1>
+								</div>
+								<div className="col-md-6">
+									<img src="/images/other/image.png"></img>
 								</div>
 							</div>
 						</div>

@@ -1,6 +1,6 @@
 // "use client"; // marks module for full browser execution
 //
-// import { ProjectSectionComponent } from "@/components/<filename>"; // File import statement
+// import { HeroFrameComponent } from "@/components/blocks/HeroFrame"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
@@ -43,47 +43,42 @@
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
 
 // 4. Relative internal (same directory)
-import "./ProjectSection.scss";
+import "./HeroFrame.scss";
 
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export async function ProjectSectionComponent({ imgurl, projtitle, projsub, projabs }) {
+export async function HeroFrameComponent({ props, mockdata }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
-
+	const frame = mockdata.frame;
 	return (
 		<>
-			<div className="project_section_component">
+			<div className="hero_frame_component">
 				<div className="block_cont">
-					<div className="size_wrap py-8">
-						<div className="row">
-							<div className="col-3"></div>
-							<div className="col-9">
-								<img className="w-50" src={imgurl}></img>
-							</div>
+					<div className="block_wrap flex-column">
+						<div className="el_img d-none d-md-block py-3">
+							<img src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
-						<div className="row py-6">
-							<div className="col-12 col-md-6 row">
-								<div className="col-3 col-md-2">
-									<h4>Project</h4>
-								</div>
-								<div className="col-9 col-md-8">
-									<h3>{projtitle}</h3>
-									<h4 className="py-1">{projsub}</h4>
-								</div>
+						<div className="el_text obj_hero_txt py-3 row">
+							<div className="col-12 col-xl-6">
+								<h1>Frames</h1>
 							</div>
-							<div className="col-12 col-md-6 row justify-content-end">
-								<div className="w-100 w-md-50">
-									<h5 className=" pb-3">{projabs}</h5>
-									<a className="d-flex">
-										See Project
-										<img src="/images/logos/arrow.svg" className="ps-2" />
-									</a>
-								</div>
+							<div className="col-12 col-xl-6">
+								<h5>
+									<i>Can a collection of pixel-based artworks capture memories and ideas?</i> Pixelificio
+									creates pieces that translate digital imagery into light. Explore the collection to see
+									how each frame is carefully designed, hand-soldered, and composed to bring its concept to
+									life.
+								</h5>
+								{frame.map((p, i) => (
+									<div className={`pb-1 ${i == 0 ? `pt-6` : ``}`}>
+										<a>{p.projtitle}</a>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
