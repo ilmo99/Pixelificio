@@ -4,12 +4,20 @@
 @use "@/scss/controllers/dynamics" as *; // controllers for mixins and variables
 // <<<<< Controllers — END
 
-.boilerplate_component {
+.grid_component {
 	// .obj_example {
 	// 	@at-root .grid_cont:not(:has(.example_target)) #{&} {
 	// 		background-color: $variable_name;
 	// 	}
 	// }
+	.obj_img_grid {
+		max-width: 100%;
+		max-height: auto;
+		object-fit: contain;
+	}
+	.obj_cont_img {
+		height: 400px;
+	}
 }
 
 /////
@@ -22,27 +30,27 @@
 ////////////////////////
 
 @media (max-width: 1399.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (max-width: 1199.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (max-width: 991.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (max-width: 767.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (max-width: 575.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
@@ -53,27 +61,27 @@
 ////////////////////
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
@@ -84,27 +92,27 @@
 ////////////////////////
 
 @media (min-width: 576px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 768px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 992px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 1200px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
 @media (min-width: 1400px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
@@ -115,7 +123,7 @@
 //////////////////////
 
 @media (max-height: 400px) and (orientation: landscape) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
@@ -126,7 +134,7 @@
 ///////////////////////
 
 @media (width: 1024px) and (height: 1366px) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
@@ -137,7 +145,7 @@
 /////////////////////////////
 
 @supports (-webkit-touch-callout: none) and (hover: none) and (pointer: coarse) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }
 
@@ -148,6 +156,6 @@
 /////////////////////////
 
 @supports (-webkit-touch-callout: default) and (hover: hover) and (pointer: fine) {
-	.boilerplate_component {
+	.grid_component {
 	}
 }

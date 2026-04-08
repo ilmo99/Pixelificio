@@ -1,6 +1,6 @@
-// "use client"; // marks module for full browser execution
+"use client"; // marks module for full browser execution
 //
-// import { GridComponent } from "@/components/<filename>"; // File import statement
+// import { GridComponent } from "@/components/blocks/GridComponent"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
@@ -43,22 +43,43 @@
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
 
 // 4. Relative internal (same directory)
-import "./Grid.scss";
-
+import "./GridComponent.scss";
+import mockdata from "mockdata.json";
+import { useState } from "react";
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export async function GridComponent({ props }) {
+export function GridComponent({ props }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
+	const [isHovered, setHover] = useState(null);
 
 	return (
 		<>
 			<div className="grid_component">
-				<div className="size_cont"></div>
+				<div className="container">
+					<div className="row">
+						{mockdata.frame.map((p) => (
+							<div key={p.id} className="col-12 col-md-6 col-xl-4 py-6">
+								<a
+									onMouseEnter={() => setHover(p.id)}
+									onMouseLeave={() => setHover(null)}
+									href="/detail"
+									className="obj_cont_img d-flex justify-content-center">
+									<img
+										className="obj_img_grid"
+										src={isHovered === p.id ? p.imghover : p.imgurl}
+										alt={p.projtitle}
+										width={p.width}
+										height={p.height}></img>
+								</a>
+							</div>
+						))}
+					</div>
+				</div>
 			</div>
 		</>
 	);

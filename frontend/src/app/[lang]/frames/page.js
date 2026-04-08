@@ -20,6 +20,7 @@ import { TranslateProvider } from "@/providers/Translate"; // Provides translati
 
 // 4. Relative internal (same directory)
 import "./page.scss";
+import { GridComponent } from "@/components/blocks/GridComponent";
 import mockdata from "mockdata.json";
 // ===============================================
 // ## ############################################
@@ -51,6 +52,7 @@ export default async function FramesPage({ params }) {
 						<div className="cont_mw_1">
 							<div>
 								<HeroFrameComponent mockdata={mockdata} />
+								<GridComponent />
 							</div>
 						</div>
 					</section>

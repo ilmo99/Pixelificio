@@ -3,6 +3,7 @@
 // import HomeLayout from "@/layout/home"; // File import statement
 import * as constants from "@/config/constants"; // Global constants shared across the app
 import "./layout.scss";
+import { NavbarComponent } from "@/components/navbars/Navbar";
 
 // ===============================================
 // ## ############################################
@@ -25,6 +26,9 @@ export default async function HomeLayout({ children, params }) {
 
 	return (
 		<>
+			<div>
+				<NavbarComponent />
+			</div>
 			<div className="home_layout grid_cont footer order-2 order-xl-0"></div>
 			<div className="home_layout grid_cont content order-1">{children}</div>
 		</>

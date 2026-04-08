@@ -60,7 +60,7 @@ export async function HeroFrameComponent({ props, mockdata }) {
 			<div className="hero_frame_component">
 				<div className="block_cont">
 					<div className="block_wrap flex-column">
-						<div className="el_img d-none d-md-block py-3">
+						<div className="el_img obj_hero_img d-none d-md-block py-3">
 							<img src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
 						<div className="el_text obj_hero_txt py-3 row">
@@ -68,15 +68,15 @@ export async function HeroFrameComponent({ props, mockdata }) {
 								<h1>Frames</h1>
 							</div>
 							<div className="col-12 col-xl-6">
-								<h5>
+								<h5 className="pt-5 pt-xl-0">
 									<i>Can a collection of pixel-based artworks capture memories and ideas?</i> Pixelificio
 									creates pieces that translate digital imagery into light. Explore the collection to see
 									how each frame is carefully designed, hand-soldered, and composed to bring its concept to
 									life.
 								</h5>
 								{frame.map((p, i) => (
-									<div className={`pb-1 ${i == 0 ? `pt-6` : ``}`}>
-										<a>{p.projtitle}</a>
+									<div className={`pb-1 ${i == 0 && `pt-6`}`}>
+										<a href="/detail">{p.projtitle}</a>
 									</div>
 								))}
 							</div>

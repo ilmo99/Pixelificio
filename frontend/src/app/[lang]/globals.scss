@@ -1,5 +1,5 @@
 //
-// Global styles
+// Global s1tyles
 //
 
 // >>> Controllers — START
@@ -365,7 +365,7 @@ p {
 // [ROLE (scope)] | [font-family] ([font-weight]) | fs: [min]px~[max]px/[min]rem~[max]rem | lh: [min]px~[max]px/[min-ratio]~[max-ratio]
 .biggest {
 	font-family: $font_title;
-	font-weight: 600;
+	font-weight: 400;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography

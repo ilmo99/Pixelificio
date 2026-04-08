@@ -9,6 +9,10 @@
 .navbar_component {
 	width: 100%;
 
+	.nav_link_desktop {
+		color: $color_black;
+	}
+
 	@at-root .grid_cont.navbar {
 		z-index: 1039;
 	}
@@ -23,6 +27,7 @@
 		background-image: none;
 		// Maximum value of 1039 needed to overlay most `z-index` priorities such as <iframe>s while keeping `.modal` (1060) and `.modal-backdrop` (1040) visible.
 		z-index: 1039;
+		color: $color_black;
 
 		.nav_menu a {
 			color: $color_fourth;

@@ -5,9 +5,10 @@
 // <<<<< Controllers — END
 
 .hero_section_component {
-	.obj_hero_txt {
-		max-width: 60%;
-	}
+	// .obj_hero_txt {
+	// 	text-align: justify;
+	// 	text-justify: inter-word;
+	// }
 }
 
 /////
@@ -98,6 +99,9 @@
 
 @media (min-width: 1200px) {
 	.hero_section_component {
+		.obj_hero_txt {
+			max-width: 60%;
+		}
 	}
 }
 

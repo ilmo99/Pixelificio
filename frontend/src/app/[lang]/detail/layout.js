@@ -1,6 +1,6 @@
 // Server-Side Rendering (React generates HTML before hydration)
 //
-// import ProfileLayout from "@/layout/profile"; // File import statement
+// import DetailLayout from "@/layout/<route>"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching
@@ -14,8 +14,6 @@
 // import DefaultExportModule from "@/<path>/DefaultExports";
 // import { NamedExportModule } from "@/<path>/NamedExports";
 import * as constants from "@/config/constants"; // Global constants shared across the app
-import { cookies } from "next/headers";
-import { ToastsComponent } from "@/components/alerts/events/Toasts";
 
 // 4. Relative internal (same directory)
 import "./layout.scss";
@@ -24,24 +22,26 @@ import "./layout.scss";
 // ## ############################################
 // ===============================================
 
-export default async function ProfileLayout({ children, params }) {
+export default async function DetailLayout({ children, params }) {
 	// Get the language from route parameters
 	const { lang } = await params;
-	const cookiesStore = await cookies();
-	const phpSession = cookiesStore.get("php_session")?.value;
-	const invitesResponse = await fetch(`${constants.BACKEND_URL_SERVER}/api/invites`, {
-		method: "GET",
-		credentials: "include",
-		headers: {
-			"Accept": "application/json",
-			"Referer": constants.APP_URL,
-			"X-Requested-With": "XMLHttpRequest",
-			"Content-Type": "application/json",
-			"cookie": "php_session=" + phpSession,
-			"locale": lang,
-		},
-	});
-	const invites = await invitesResponse.json();
 
-	return <ToastsComponent />;
+	// Fetch data from the API with language header
+	// const dataResponse = await fetch(`${constants.APP_URL}/api/${lang}/<route>`, {
+	// 	method: "GET",
+	// 	credentials: "include",
+	// 	headers: {
+	// 		"Content-Type": "application/json",
+	// 		"locale": lang,
+	// 	},
+	// });
+	// const dataResponseJson = await dataResponse.json();
+
+	return (
+		<>
+			<div className="detail_layout grid_cont footer order-2 order-xl-0">{/* content */}</div>
+
+			<div className="detail_layout grid_cont content order-1">{children}</div>
+		</>
+	);
 }

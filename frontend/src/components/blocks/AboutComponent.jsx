@@ -63,7 +63,7 @@ export async function AboutComponent({ props }) {
 						<div className="el_img d-none d-md-block py-3">
 							<img src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
-						<div className="el_text obj_hero_txt col-lg-10 py-3">
+						<div className="el_text obj_hero_txt col-lg-11 pe-lg-4 pt-3 pb-6">
 							<h1>
 								Our team may be just me, but together we make pixels, circuits, and ideas come to life:
 								mostly with soldering and coffee.
@@ -82,12 +82,14 @@ export async function AboutComponent({ props }) {
 								<p className="biggest">2</p>
 								<p>Arduino boards sacrificed</p>
 							</div>
-							<div className="el_team row pt-4">
+							<div className="el_team row mt-4 pt-5">
 								<div className="col-md-6">
 									<h1>Our Team</h1>
 								</div>
 								<div className="col-md-6">
 									<img src="/images/other/image.png"></img>
+									<p>Matteo Busan</p>
+									<p className="el_founder pt-2">Founder, Coder and Crafter</p>
 								</div>
 							</div>
 						</div>

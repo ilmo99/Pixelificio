@@ -107,7 +107,7 @@ export const NavbarComponent = function ({ ...props }) {
 
 	return (
 		<div className={`navbar_component ${isScrolled ? "navbar-scrolled" : ""}`}>
-			<nav className={`nav_slide_top rounded-3 navbar ${isScrolled ? "scrolled" : ""}`}>
+			<nav className={`nav_slide_top rounded-3 navbar border-bottom border-dark ${isScrolled ? "scrolled" : ""}`}>
 				<div className="navbar_container_full cont_space_1 color_white container-fluid row justify-content-between align-items-center py-0">
 					<div className="menu_navbar cont_mw_1 row justify-content-between align-items-center">
 						<nav className="skiplinks" aria-label="Scorciatoie di navigazione">
@@ -147,10 +147,10 @@ export const NavbarComponent = function ({ ...props }) {
 								<figure className="figure_logo">
 									<Image
 										className="logo_primary img-fluid"
-										src={props.logo.src}
+										src={props?.logo?.src || "/images/logos/pixelificio-logo.svg"}
 										alt="Logo"
-										width={props.logo.width}
-										height={props.logo.height}
+										width={props?.logo?.width || 150}
+										height={props?.logo?.height || 150}
 									/>
 								</figure>
 							</Link>
@@ -158,7 +158,20 @@ export const NavbarComponent = function ({ ...props }) {
 
 							{/* toggler */}
 							<div className="menu_box box_left color_white row justify-content-start align-items-center col-auto ms-auto">
-								<div className="toggle_wrapper w-auto h-100">
+								<div className="nav_desktop_links d-none d-lg-flex align-items-center me-4">
+									<Link href={`/${lang}`} className="nav_link_desktop mx-3" onClick={closeNavbar}>
+										Home
+									</Link>
+
+									<Link href={`/${lang}/frames`} className="nav_link_desktop mx-3" onClick={closeNavbar}>
+										Frames
+									</Link>
+
+									<Link href={`/${lang}/about`} className="nav_link_desktop mx-3" onClick={closeNavbar}>
+										About
+									</Link>
+								</div>
+								{/* <div className="toggle_wrapper w-auto h-100">
 									{isLoggedIn ? (
 										<>
 											<Link
@@ -211,14 +224,14 @@ export const NavbarComponent = function ({ ...props }) {
 										<span className="span_toggler d-none" />
 										<span className="span_toggler" />
 									</button>
-								</div>
+								</div> */}
 							</div>
 							{/* fine toggler */}
 						</div>
 						{/* Voci del menu per mobile */}
 						{/* Half circle at the top center */}
 
-						<div
+						{/* <div
 							className="menu_collapse bg_color_second semicerchio navbar-collapse collapse"
 							id="navbarBasicContent"
 							ref={collapseRef}>
@@ -280,7 +293,7 @@ export const NavbarComponent = function ({ ...props }) {
 												Istruzioni
 											</Link> */}
 
-											<Link
+						{/*											<Link
 												className="nav-link nav-link_dx"
 												href={`/${lang}/groups-list`}
 												onClick={closeNavbar}>
@@ -320,7 +333,7 @@ export const NavbarComponent = function ({ ...props }) {
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</nav>

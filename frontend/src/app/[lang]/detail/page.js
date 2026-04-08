@@ -1,6 +1,6 @@
 // Server-Side Rendering (React generates HTML before hydration)
 //
-// import VerifyEmailLayout from "@/layout/verify_email"; // File import statement
+// import DetailPage from "@/page/<route>"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching
@@ -11,23 +11,29 @@
 // import clsx from "clsx"; // Conditional CSS class name joiner
 
 // 3. Absolute internal (`@/` alias)
-// import DefaultExportModule from "@/<path>/DefaultExports";
-// import { NamedExportModule } from "@/<path>/NamedExports";
+// import DefaultExportModule from "@/<path>/DefaultExport";
+// import { NamedExportModule } from "@/<path>/NamedExport";
 import * as constants from "@/config/constants"; // Global constants shared across the app
+import { getDictionary } from "@/app/dictionaries"; // Fetch translation dictionary based on language
+import { TranslateProvider } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 
 // 4. Relative internal (same directory)
-import "./layout.scss";
+import "./page.scss";
+import { DetailComponent } from "@/components/blocks/DetailComponent";
 
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export default async function VerifyEmailLayout({ children, params }) {
+export default async function DetailPage({ params }) {
 	// Get the language from route parameters
 	const { lang } = await params;
 
+	// Fetch translation dictionary based on language
+	const translates = await getDictionary(lang);
+
 	// Fetch data from the API with language header
-	// const dataResponse = await fetch(`${constants.APP_URL}/api/${lang}/<route>`, {
+	// const dataResponse = await fetch(`${constants.APP_URL}/api/${lang}/<route>/<section>`, {
 	// 	method: "GET",
 	// 	credentials: "include",
 	// 	headers: {
@@ -39,7 +45,15 @@ export default async function VerifyEmailLayout({ children, params }) {
 
 	return (
 		<>
-			<div className="verify_email_layout grid_cont content">{children}</div>
+			<div className="detail_page">
+				<div className="page_cont">
+					<section className="cont_space_1">
+						<div className="cont_mw_1">
+							<DetailComponent />
+						</div>
+					</section>
+				</div>
+			</div>
 		</>
 	);
 }

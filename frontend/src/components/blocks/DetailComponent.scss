@@ -1,11 +1,13 @@
-// @use "@/layout/<route>" as *; // File import statement
+// @use "@/components/<subfolder>/<filename>" as *; // File import statement
 
 // >>> Controllers — START
 @use "@/scss/controllers/dynamics" as *; // controllers for mixins and variables
-@use "@/scss/controllers/extends" as *; // controller for modules
 // <<<<< Controllers — END
 
-.verify_email_page {
+.detail_component {
+	.obj_gray_txt {
+		color: gray;
+	}
 }
 
 /////
@@ -18,27 +20,30 @@
 ////////////////////////
 
 @media (max-width: 1399.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (max-width: 1199.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (max-width: 991.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (max-width: 767.98px) {
-	.verify_email_page {
+	.detail_component {
+		.el_img_parag {
+			max-width: 60vw;
+		}
 	}
 }
 
 @media (max-width: 575.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
@@ -49,27 +54,27 @@
 ////////////////////
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
@@ -80,27 +85,27 @@
 ////////////////////////
 
 @media (min-width: 576px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 768px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 992px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 1200px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
 @media (min-width: 1400px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
@@ -111,7 +116,7 @@
 //////////////////////
 
 @media (max-height: 400px) and (orientation: landscape) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
@@ -122,7 +127,7 @@
 ///////////////////////
 
 @media (width: 1024px) and (height: 1366px) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
@@ -133,7 +138,7 @@
 /////////////////////////////
 
 @supports (-webkit-touch-callout: none) and (hover: none) and (pointer: coarse) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
 
@@ -144,6 +149,6 @@
 /////////////////////////
 
 @supports (-webkit-touch-callout: default) and (hover: hover) and (pointer: fine) {
-	.verify_email_page {
+	.detail_component {
 	}
 }
