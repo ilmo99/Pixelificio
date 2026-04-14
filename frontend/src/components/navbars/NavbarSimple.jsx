@@ -22,7 +22,7 @@ import React, { // React hooks to manage state, context, and side effects {CSR}
 // import axios from "axios"; // Promise-based HTTP client for data fetching (API requests) {CSR|SSR}
 // import clsx from "clsx"; // Conditional CSS class name joiner {CSR|SSR}
 // import useSWR from "swr"; // Client-side data fetching with automatic revalidation {CSR}
-// import { AnimatePresence, motion } from "framer-motion"; // Declarative client-side animations and transitions {CSR}
+import { AnimatePresence, motion } from "framer-motion"; // Declarative client-side animations and transitions {CSR}
 // import { Bar, BarChart } from "recharts"; // Base components for rendering bar charts {CSR}
 // import { Canvas } from "@react-three/fiber"; // Render 3D scenes with Three.js using JSX (client-only) {CSR}
 // import { gsap } from "gsap"; // High-performance JS animation engine (scroll triggers, timelines, sequences) {CSR}
@@ -56,59 +56,88 @@ export const NavbarSimple = function ({ ...props }) {
 	const lang = useTranslate()["lang"];
 	const [isOpen, setOpen] = useState(false);
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
+	function handleOpen() {
+		setOpen(!isOpen);
+	}
+
+	function closeOpen() {
+		setOpen(false);
+	}
 
 	return (
 		<>
-			<nav className="navbar_component obj_navbar cont_space_1 d-flex align-items-center">
-				<Link href={`/${lang}`} className="navbar_logo d-inline-flex">
-					<Image
-						className="logo_primary me-2"
-						src={props.logo.src}
-						alt="Logo"
-						width={props.logo.width}
-						height={props.logo.height}
-					/>
-					<Image
-						className="logo_iride d-md-none"
-						src={props.iride.src}
-						alt="Iride"
-						width={props.iride.width}
-						height={props.iride.height}
-					/>
-				</Link>
-				<div className="el_link d-none d-md-flex col-auto align-items-end ms-auto">
-					<Link href={`/${lang}`} className="el_nav_link obj_nav_link px-4">
-						Home
+			<div className="navbar_component cont_space_1">
+				<nav className="el_navbar obj_navbar cont_mw_1 d-flex align-items-center">
+					<Link href={`/${lang}`} onClick={closeOpen} className="navbar_logo d-inline-flex">
+						<Image
+							className="logo_primary me-2"
+							src={props.logo.src}
+							alt="Logo"
+							priority={true}
+							width={props.logo.width}
+							height={props.logo.height}
+						/>
+						<Image
+							className="logo_iride d-md-none"
+							src={props.iride.src}
+							alt="Iride"
+							priority={true}
+							width={props.iride.width}
+							height={props.iride.height}
+						/>
 					</Link>
-					<Link href={`/${lang}/frames`} className="el_nav_link obj_nav_link px-4">
-						Frames
-					</Link>
-					<Link href={`/${lang}/about`} className="el_nav_link obj_nav_link ps-4">
-						About
-					</Link>
-				</div>
-				<div className="el_link_sm obj_dropdown d-flex d-md-none flex-column flex-md-row mw-25 ms-auto position-relative">
-					<Link href={`/${lang}`} onClick={() => setOpen(!isOpen)} className="el_nav_link obj_nav_link px-4">
-						Home
-					</Link>
-					{isOpen && (
-						<div className="el_drop_menu obj_drop_cont mw-25 position-absolute bg-white px-4">
-							<Link
-								href={`/${lang}/frames`}
-								onClick={() => setOpen(!isOpen)}
-								className="el_nav_link obj_nav_link">
-								Frames
-							</Link>
-							<Link
-								href={`/${lang}/about`}
-								onClick={() => setOpen(!isOpen)}
-								className="el_nav_link obj_nav_link">
-								About
-							</Link>
-						</div>
-					)}
-				</div>
-			</nav>
+					<div className="el_link d-none d-md-flex h-100 ms-auto">
+						<Link href={`/${lang}`} className="el_nav_link obj_nav_link align-items-center px-4">
+							Home
+						</Link>
+						<Link href={`/${lang}/frames`} className="el_nav_link obj_nav_link align-items-center px-4">
+							Frames
+						</Link>
+						<Link href={`/${lang}/about`} className="el_nav_link obj_nav_link align-items-center px-4">
+							About
+						</Link>
+					</div>
+					<div className="el_link_drop obj_dropdown d-flex d-md-none flex-column justify-content-center align-items-center h-100 ms-auto">
+						<button onClick={handleOpen} className="el_btn obj_btn position-relative px-4">
+							{isOpen ? <span className="big">x</span> : <a>Menu</a>}
+						</button>
+						<AnimatePresence>
+							{isOpen && (
+								<motion.div
+									initial={{ opacity: 0, y: -10, height: 0 }}
+									animate={{ opacity: 1, y: 0, height: "auto" }}
+									exit={{ opacity: 0, y: -10, height: 0 }}
+									transition={{ duration: 0.25, ease: "easeInOut" }}
+									className="el_drop_menu obj_drop_cont d-flex flex-column position-absolute top-100 bg-white px-2">
+									<Link href={`/${lang}`} onClick={handleOpen} className="el_nav_link">
+										Home
+									</Link>
+									<Link href={`/${lang}/frames`} onClick={handleOpen} className="el_nav_link">
+										Frames
+									</Link>
+									<Link href={`/${lang}/about`} onClick={handleOpen} className="el_nav_link">
+										About
+									</Link>
+									{/* links... */}
+								</motion.div>
+							)}
+						</AnimatePresence>
+						{/* {isOpen && (
+							<div className="el_drop_menu obj_drop_cont d-flex flex-column position-absolute top-100 bg-white px-2">
+								<Link href={`/${lang}`} onClick={handleOpen} className="el_nav_link">
+									Home
+								</Link>
+								<Link href={`/${lang}/frames`} onClick={handleOpen} className="el_nav_link">
+									Frames
+								</Link>
+								<Link href={`/${lang}/about`} onClick={handleOpen} className="el_nav_link">
+									About
+								</Link>
+							</div>
+						)} */}
+					</div>
+				</nav>
+			</div>
 		</>
 	);
 };

@@ -28,7 +28,7 @@ import { SignInComponent } from "@/components/dialogs/SignIn";
 // INTERNAL RESOURCES
 // import { NavSlideTopComponent } from "@/navbars/NavSlideTop";
 import { NavbarSimple, NavSideBurgerComponent } from "@/navbars/NavbarSimple";
-import { FooterSimple } from "@/footers/FooterSimple";
+import { FooterComponent } from "@/footers/FooterComponent";
 import "./layout.scss";
 
 // ===============================================
@@ -133,9 +133,11 @@ export default async function RootLayout({ children, params }) {
 								</div>
 
 								<div className="grid_cont content">{children}</div>
-
-								<div className="grid_cont footer">{/* <FooterSimple /> */}</div>
+								<div className="grid_cont ms-auto">
+									<FooterComponent iride={{ src: "/images/logos/iride.svg", width: 16, height: 16 }} />
+								</div>
 							</div>
+
 							{/* PROJECT UTILITIES (scripts | cookies) */}
 							<GlobalScripts />
 							<KlaroCookieConsent config={klaroConfig} />

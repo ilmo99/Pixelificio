@@ -4,6 +4,12 @@
 @use "@/scss/controllers/dynamics" as *; // controllers for mixins and variables
 @use "@/scss/controllers/extends" as *; // controller for modules
 // <<<<< Controllers — END
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 
 .root_layout {
 	.navbar {
@@ -38,6 +44,11 @@
 	.border_radius {
 		border-radius: 10px;
 	}
+
+	.grid_cont.content {
+		flex : 1 1 auto;
+	}
+
 }
 
 /////

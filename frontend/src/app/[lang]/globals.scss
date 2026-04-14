@@ -166,7 +166,7 @@ $reference-vw-max: 80em; // Maximum REFERENCE viewport width
 // [ROLE (scope)] | [font-family] ([font-weight]) | fs: [min]px~[max]px/[min]rem~[max]rem | lh: [min]px~[max]px/[min-ratio]~[max-ratio]
 a,
 .a {
-	color: grey;
+	color: black;
 	font-family: $font_body;
 	font-size: 1.2rem;
 }
@@ -294,7 +294,7 @@ h5,
 h6,
 .h6 {
 	font-family: $font_title;
-	font-weight: 600;
+	font-weight: 400;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -302,10 +302,10 @@ h6,
 		$source-vw-min: $reference-vw-min, // Minimum REFERENCE viewport width
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
-		$font-size-min: 1rem, // `font-size` on mobile viewport (< 575.98px)
+		$font-size-min: 2rem, // `font-size` on mobile viewport (< 575.98px)
 		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
-		$font-size-max: 1rem, // `font-size` on desktop viewport (> 576px)
+		$font-size-max: 2rem, // `font-size` on desktop viewport (> 576px)
 		$line-height-desktop: 1.2, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
