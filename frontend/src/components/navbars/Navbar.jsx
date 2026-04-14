@@ -19,7 +19,7 @@ import "./Navbar.scss";
 export const NavbarComponent = function ({ ...props }) {
 	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(true);
 
 	const csr = useClient();
 	const collapseRef = useRef(null);
@@ -106,9 +106,9 @@ export const NavbarComponent = function ({ ...props }) {
 	};
 
 	return (
-		<div className={`navbar_component ${isScrolled ? "navbar-scrolled" : ""}`}>
-			<nav className={`nav_slide_top rounded-3 navbar border-bottom border-dark ${isScrolled ? "scrolled" : ""}`}>
-				<div className="navbar_container_full cont_space_1 color_white container-fluid row justify-content-between align-items-center py-0">
+		<div className={`navbar_component ${isScrolled ? "navbar-scrolled" : ""} pt-6`}>
+			<nav className={`nav_slide_top navbar border-bottom border-dark ${isScrolled ? "scrolled" : ""}`}>
+				<div className="navbar_container_full cont_space_1 color_white container-fluid row align-items-center py-0">
 					<div className="menu_navbar cont_mw_1 row justify-content-between align-items-center">
 						<nav className="skiplinks" aria-label="Scorciatoie di navigazione">
 							<ul>
@@ -137,7 +137,7 @@ export const NavbarComponent = function ({ ...props }) {
 							</ul>
 						</nav>
 
-						<div className="collapse_nav navbar-nav row flex-row align-items-end col-12 py-4">
+						<div className="collapse_nav navbar-nav row flex-row col-12">
 							{/* logo */}
 							<Link
 								className="menu_box box_center color_white small row align-items-center-md col-auto col-md-2"
@@ -147,30 +147,31 @@ export const NavbarComponent = function ({ ...props }) {
 								<figure className="figure_logo">
 									<Image
 										className="logo_primary img-fluid"
-										src={props?.logo?.src || "/images/logos/pixelificio-logo.svg"}
+										src={props.logo.src}
 										alt="Logo"
-										width={props?.logo?.width || 150}
-										height={props?.logo?.height || 150}
+										width={props.logo.width}
+										height={props.logo.height}
 									/>
 								</figure>
 							</Link>
 							{/* fine logo */}
 
 							{/* toggler */}
-							<div className="menu_box box_left color_white row justify-content-start align-items-center col-auto ms-auto">
-								<div className="nav_desktop_links d-none d-lg-flex align-items-center me-4">
-									<Link href={`/${lang}`} className="nav_link_desktop mx-3" onClick={closeNavbar}>
+							<div className="menu_box box_left color_white row justify-content-start align-items-center col-md-4 col-lg-3 ms-auto">
+								<div className="nav_desktop_links d-none d-md-flex justify-content-between align-items-center me-4">
+									<Link href={`/${lang}`} className="nav_link_desktop" onClick={closeNavbar}>
 										Home
 									</Link>
 
-									<Link href={`/${lang}/frames`} className="nav_link_desktop mx-3" onClick={closeNavbar}>
+									<Link href={`/${lang}/frames`} className="nav_link_desktop" onClick={closeNavbar}>
 										Frames
 									</Link>
 
-									<Link href={`/${lang}/about`} className="nav_link_desktop mx-3" onClick={closeNavbar}>
+									<Link href={`/${lang}/about`} className="nav_link_desktop" onClick={closeNavbar}>
 										About
 									</Link>
 								</div>
+								<div className></div>
 								{/* <div className="toggle_wrapper w-auto h-100">
 									{isLoggedIn ? (
 										<>

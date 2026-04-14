@@ -19,7 +19,7 @@
 
 	.nav_slide_top {
 		height: $height_md; // `_variables.scss`
-		// position: fixed;
+		position: fixed;
 		top: 0;
 		right: 0;
 		left: 0;
@@ -28,6 +28,7 @@
 		// Maximum value of 1039 needed to overlay most `z-index` priorities such as <iframe>s while keeping `.modal` (1060) and `.modal-backdrop` (1040) visible.
 		z-index: 1039;
 		color: $color_black;
+		font-weight: 500;
 
 		.nav_menu a {
 			color: $color_fourth;

@@ -27,7 +27,8 @@ import { SignInComponent } from "@/components/dialogs/SignIn";
 
 // INTERNAL RESOURCES
 // import { NavSlideTopComponent } from "@/navbars/NavSlideTop";
-import { NavSideBurgerComponent } from "@/navbars/Navbar";
+import { NavbarSimple, NavSideBurgerComponent } from "@/navbars/NavbarSimple";
+import { FooterSimple } from "@/footers/FooterSimple";
 import "./layout.scss";
 
 // ===============================================
@@ -125,13 +126,15 @@ export default async function RootLayout({ children, params }) {
 								<div className="grid_cont navbar row justify-content-center position-sticky top-0 start-0">
 									{/* <NavSideBurgerComponent menu={menuResponseJson} /> */}
 									{/* <NavSlideTopComponent /> */}
+									<NavbarSimple
+										logo={{ src: "/images/logos/pixelificio-logo.svg", width: 119, height: 25 }}
+										iride={{ src: "/images/logos/iride.svg", width: 16, height: 16 }}
+									/>
 								</div>
 
 								<div className="grid_cont content">{children}</div>
 
-								{/* <div className="grid_cont footer">
-									<FooterComponent />
-								</div> */}
+								<div className="grid_cont footer">{/* <FooterSimple /> */}</div>
 							</div>
 							{/* PROJECT UTILITIES (scripts | cookies) */}
 							<GlobalScripts />

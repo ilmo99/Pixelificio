@@ -14,13 +14,13 @@ export const FooterSimple = function ({ logo }) {
 					<div className="box_1 col-12 col-md-4 mb-3 mb-md-0 px-3">
 						<figure className="logo_wrapper col-10 col-sm-12 col-md-8 col-lg-7 col-xl-6 col-xxl-4">
 							{/* <img className="logo_primary img-fluid" src="images/logos/logo_humanbit_dark.svg" alt="Logo" /> */}
-							<Image
+							{/* <Image
 								className="logo_primary img-fluid"
 								src={logo.src}
 								alt="Logo"
 								width={logo.width}
 								height={logo.height}
-							/>
+							/> */}
 						</figure>
 					</div>
 				</div>

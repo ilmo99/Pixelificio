@@ -26,9 +26,6 @@ export default async function HomeLayout({ children, params }) {
 
 	return (
 		<>
-			<div>
-				<NavbarComponent />
-			</div>
 			<div className="home_layout grid_cont footer order-2 order-xl-0"></div>
 			<div className="home_layout grid_cont content order-1">{children}</div>
 		</>

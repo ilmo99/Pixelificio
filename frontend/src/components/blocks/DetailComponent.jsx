@@ -67,9 +67,11 @@ export async function DetailComponent({ props }) {
 				<div className="el_section row  justify-content-center justify-content-md-between">
 					<div className="el_parag col-12 col-md-6 col-lg-8">
 						<p className="el_txt py-2 py-lg-4">
-							Behind the scenes, it’s a fairly simple setup. A 28 by 8 LED matrix running on 5V, driven by an
-							Arduino Pro Micro that keeps everything moving at its own pace. No inputs, no interaction, just a
-							small system doing exactly what it was built to do, over and over again.
+							<i>
+								Behind the scenes, it’s a fairly simple setup. A 28 by 8 LED matrix running on 5V, driven by
+								an Arduino Pro Micro that keeps everything moving at its own pace. No inputs, no interaction,
+								just a small system doing exactly what it was built to do, over and over again.
+							</i>
 						</p>
 						<p className="el_txt obj_gray_txt py-2 py-lg-4">
 							The idea came from a habit. Watching other people play that classic falling-block game as a way

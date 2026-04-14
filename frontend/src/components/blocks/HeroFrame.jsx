@@ -75,7 +75,7 @@ export async function HeroFrameComponent({ props, mockdata }) {
 									life.
 								</h5>
 								{frame.map((p, i) => (
-									<div className={`pb-1 ${i == 0 && `pt-6`}`}>
+									<div key={p.id} className={`pb-1 ${i == 0 && `pt-6`}`}>
 										<a href="/detail">{p.projtitle}</a>
 									</div>
 								))}
