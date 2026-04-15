@@ -58,23 +58,36 @@ export async function FooterComponent({ ...props }) {
 
 	return (
 		<>
-			<div className="footer_component">
-				<div className="el_foot_title obj_foot_title row py-5">
-					<h6 className="text-center">Curious how they look in your space?</h6>
-				</div>
-				<div className="el_foot_cont row">
-					<figure className="el_logo obj_logo col-12 col-md-2 col-lg-6">
-						<Image
-							className="logo_iride img-fluid"
-							src={props.iride.src}
-							alt="Iride"
-							priority={true}
-							width={16}
-							height={16}
-						/>
-					</figure>
-					<div className="el_contatti col-12 col-md-4 col-lg-4"></div>
-					<div className="el_social col-12 col-md-3 ms-md-auto col-lg-4"></div>
+			<div className="footer_component cont_space_1">
+				<div className="cont_mw_1">
+					<div className="el_foot_title obj_foot_title row py-5">
+						<h6 className="text-center">Curious how they look in your space?</h6>
+					</div>
+					<div className="el_foot_cont row py-4 py-lg-6">
+						<div className="el_logo col-12 col-md-2 col-lg-6">
+							<img className="logo_iride obj_logo img-fluid" src={props.iride.src} alt="Iride" />
+						</div>
+						<div className="el_contatti col-12 col-md-4 col-lg-4">
+							<p className="pt-5 pt-md-0">OFFICE</p>
+							<a
+								className="d-flex pt-3"
+								href="https://www.google.com/maps/place/Mr+Rex/@33.9206945,-116.7754723,17z/data=!3m1!4b1!4m6!3m5!1s0x80db3f0004e92663:0xf0d7c70a2f883831!8m2!3d33.9206945!4d-116.7728974!16s%2Fg%2F11x37bq6gs?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D">
+								Milan, Italy
+							</a>
+							<p className="pt-5">CONTACT</p>
+							<a className="d-flex pt-3">+39 346-3197010</a>
+							<a className="d-flex pt-1">pixelificio@gmail.com</a>
+						</div>
+						<div className="el_social col-12 col-md-3 ms-md-auto col-lg-2">
+							<p className="pt-5 pt-md-0">SOCIAL</p>
+							<a href="https://www.instagram.com/" className="d-flex pt-3">
+								Instagram
+							</a>
+							<a href="https://web.telegram.org/a/" className="d-flex pt-1">
+								Telegram
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</>

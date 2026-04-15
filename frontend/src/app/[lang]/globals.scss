@@ -295,6 +295,7 @@ h6,
 .h6 {
 	font-family: $font_title;
 	font-weight: 400;
+	letter-spacing: -0.1rem;
 
 	// prettier-ignore
 	@include fluid_type( // responsive typography
@@ -1464,8 +1465,8 @@ ul {
 
 .cont_space_1 {
 	// padding: 2.5rem 4.5rem;
-	padding-right: 4.5rem;
-	padding-left: 4.5rem;
+	padding-right: 2.5rem;
+	padding-left: 2.5rem;
 }
 
 .cont_space_2 {
@@ -1475,7 +1476,7 @@ ul {
 }
 
 .cont_mw_1 {
-	max-width: 1280px;
+	max-width: 1400px;
 	margin: 0 auto;
 	// margin-right: auto;
 	// margin-left: auto;

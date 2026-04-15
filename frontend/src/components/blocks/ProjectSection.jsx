@@ -59,13 +59,13 @@ export async function ProjectSectionComponent({ imgurl, projtitle, projsub, proj
 		<>
 			<div className="project_section_component">
 				<div className="block_cont">
-					<div className="size_wrap py-8">
+					<div className="size_wrap py-6 py-md-8">
 						<div className="row">
-							<div className="d-flex col-7 justify-content-center">
+							<div className="d-flex col-12 col-lg-7 justify-content-center align-items-center">
 								<img className="el_img obj_proj_img" src={imgurl}></img>
 							</div>
 						</div>
-						<div className="row py-6">
+						<div className="row pt-6">
 							<div className="col-12 col-md-6 row">
 								<div className="col-3 col-md-2">
 									<h4>Project</h4>
@@ -76,11 +76,11 @@ export async function ProjectSectionComponent({ imgurl, projtitle, projsub, proj
 								</div>
 							</div>
 							<div className="col-12 col-md-6 row justify-content-end">
-								<div className="w-100 w-md-50">
+								<div className="w-100 w-lg-75 w-xl-50">
 									<h5 className=" pb-3">{projabs}</h5>
 									<a href="/frames" className="d-flex">
 										See Project
-										<img src="/images/logos/arrow.svg" className="ps-2" />
+										<img className="ps-2" src="/images/icons/arrow.svg" />
 									</a>
 								</div>
 							</div>

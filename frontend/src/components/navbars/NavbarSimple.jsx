@@ -99,7 +99,26 @@ export const NavbarSimple = function ({ ...props }) {
 					</div>
 					<div className="el_link_drop obj_dropdown d-flex d-md-none flex-column justify-content-center align-items-center h-100 ms-auto">
 						<button onClick={handleOpen} className="el_btn obj_btn position-relative px-4">
-							{isOpen ? <span className="big">x</span> : <a>Menu</a>}
+							{isOpen ? (
+								<span>
+									{/* <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
+										<rect width="16" height="16" fill="none" />
+
+										<rect x="3" y="3" width="2" height="2" fill="#111111" />
+										<rect x="4" y="4" width="2" height="2" fill="#111111" />
+										<rect x="5" y="5" width="2" height="2" fill="#111111" />
+										<rect x="6" y="6" width="2" height="2" fill="#111111" />
+
+										<rect x="9" y="3" width="2" height="2" fill="#111111" />
+										<rect x="8" y="4" width="2" height="2" fill="#111111" />
+										<rect x="7" y="5" width="2" height="2" fill="#111111" />
+										<rect x="6" y="6" width="2" height="2" fill="#111111" />
+									</svg> */}
+									<img src="/images/icons/icon-close.png"></img>
+								</span>
+							) : (
+								<a>Menu</a>
+							)}
 						</button>
 						<AnimatePresence>
 							{isOpen && (
@@ -108,7 +127,7 @@ export const NavbarSimple = function ({ ...props }) {
 									animate={{ opacity: 1, y: 0, height: "auto" }}
 									exit={{ opacity: 0, y: -10, height: 0 }}
 									transition={{ duration: 0.25, ease: "easeInOut" }}
-									className="el_drop_menu obj_drop_cont d-flex flex-column position-absolute top-100 bg-white px-2">
+									className="el_drop_menu obj_drop_cont d-flex flex-column position-absolute top-100 bg-white pt-2 px-4">
 									<Link href={`/${lang}`} onClick={handleOpen} className="el_nav_link">
 										Home
 									</Link>

@@ -78,6 +78,8 @@ export default async function HomePage({ params }) {
 									projtitle={p.projtitle}
 									projsub={p.projsub}
 									projabs={p.projabs}
+									// width={p.width}
+									// height={p.height}
 								/>
 							))}
 						</div>
