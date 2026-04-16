@@ -49,7 +49,7 @@ import "./ProjectSection.scss";
 // ## ############################################
 // ===============================================
 
-export async function ProjectSectionComponent({ imgurl, projtitle, projsub, projabs }) {
+export async function ProjectSectionComponent({ imghover, projtitle, projsub, projabs }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -62,7 +62,7 @@ export async function ProjectSectionComponent({ imgurl, projtitle, projsub, proj
 					<div className="size_wrap py-6 py-md-8">
 						<div className="row">
 							<div className="d-flex col-12 col-lg-7 justify-content-center align-items-center">
-								<img className="el_img obj_proj_img" src={imgurl}></img>
+								<img className="el_img obj_proj_img" src={imghover}></img>
 							</div>
 						</div>
 						<div className="row pt-6">

@@ -4,18 +4,18 @@
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
-// import React, { // React hooks to manage state, context, and side effects {CSR}
-// 	createContext, // Create a global Context {CSR}
-// 	useCallback, // Memoize a callback to avoid re-creating it on re-renders {CSR}
-// 	useContext, // Consume the nearest <Provider>'s Context value {CSR}
-// 	useEffect, // Run side effects AFTER screen update (non-blocking; e.g., data fetch, event listener) {CSR}
-// 	useImperativeHandle, // [NICHE] Expose custom methods to parent refs instead of the DOM node (e.g., `focus()`, `scrollToBottom()`) {CSR}
-// 	useLayoutEffect, // [RARE] Run side effects BEFORE screen update (blocking; e.g., layout reads/writes) {CSR}
-// 	useMemo, // Memoize a value to avoid re-computing it on re-renders {CSR}
-// 	useReducer, // Manage complex state logic with a reducer function {CSR}
-// 	useRef, // Create a mutable ref that persists across renders {CSR}
-// 	useState, // Manage local component state {CSR}
-// } from "react";
+import React, { // React hooks to manage state, context, and side effects {CSR}
+	// 	createContext, // Create a global Context {CSR}
+	useCallback, // Memoize a callback to avoid re-creating it on re-renders {CSR}
+	// 	useContext, // Consume the nearest <Provider>'s Context value {CSR}
+	useEffect, // Run side effects AFTER screen update (non-blocking; e.g., data fetch, event listener) {CSR}
+	// 	useImperativeHandle, // [NICHE] Expose custom methods to parent refs instead of the DOM node (e.g., `focus()`, `scrollToBottom()`) {CSR}
+	// 	useLayoutEffect, // [RARE] Run side effects BEFORE screen update (blocking; e.g., layout reads/writes) {CSR}
+	// 	useMemo, // Memoize a value to avoid re-computing it on re-renders {CSR}
+	// 	useReducer, // Manage complex state logic with a reducer function {CSR}
+	useRef, // Create a mutable ref that persists across renders {CSR}
+	useState, // Manage local component state {CSR}
+} from "react";
 
 // 2. External imports (third-party libraries)
 // import axios from "axios"; // Promise-based HTTP client for data fetching (API requests) {CSR|SSR}
@@ -45,7 +45,6 @@
 // 4. Relative internal (same directory)
 import "./GridComponent.scss";
 import mockdata from "mockdata.json";
-import { useState } from "react";
 // ===============================================
 // ## ############################################
 // ===============================================
@@ -67,9 +66,12 @@ export function GridComponent({ props }) {
 								<a
 									onMouseEnter={() => setHover(p.id)}
 									onMouseLeave={() => setHover(null)}
-									href="/detail"
+									onTouchStart={() => setHover(p.id)}
+									onTouchEnd={() => setTimeout(() => setHover(null), 200)}
+									href={`/frames/${p.id}`}
 									className="obj_cont_img d-flex justify-content-center">
 									<img
+										data-id={p.id}
 										className="obj_img_grid"
 										src={isHovered === p.id ? p.imghover : p.imgurl}
 										alt={p.projtitle}

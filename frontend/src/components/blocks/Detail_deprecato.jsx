@@ -1,6 +1,6 @@
 // "use client"; // marks module for full browser execution
 //
-// import { AboutComponent } from "@/components/blocks/AboutComponent"; // File import statement
+// import { DetailComponent } from "@/components/blocks/DetailComponent.jsx"; // File import statement
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
@@ -43,13 +43,14 @@
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
 
 // 4. Relative internal (same directory)
-import "./AboutComponent.scss";
+import "./DetailComponent.scss";
+import mockdata from "mockdata.json";
 
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export async function AboutComponent({ props }) {
+export async function DetailComponent({ props }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -57,42 +58,33 @@ export async function AboutComponent({ props }) {
 
 	return (
 		<>
-			<div className="About_component">
-				<div className="size_cont">
-					<div className="block_wrap">
-						<div className="el_img d-none d-md-block py-3">
-							<img src="/images/logos/iride.svg" alt="Iride logo" />
-						</div>
-						<div className="el_text obj_hero_txt col-lg-11 pe-lg-4 pt-3 pb-6">
-							<h1>
-								Our team may be just me, but together we make pixels, circuits, and ideas come to life:
-								mostly with soldering and coffee.
-							</h1>
-						</div>
-						<div className="row">
-							<div className="el_num col-md-4">
-								<p className="biggest">1659</p>
-								<p>Glowing pixels in our frames</p>
-							</div>
-							<div className="el_num pt-4 pt-md-0 ps-md-4 col-md-4">
-								<p className="biggest">6</p>
-								<p>Crafted frames</p>
-							</div>
-							<div className="pt-4 pt-md-0 ps-md-4 col-md-4">
-								<p className="biggest">2</p>
-								<p>Arduino boards sacrificed</p>
-							</div>
-							<div className="el_team row mt-4 pt-5">
-								<div className="col-md-6">
-									<h1>Our Team</h1>
-								</div>
-								<div className="col-md-6">
-									<img src="/images/other/Matt_Caricatura.png"></img>
-									<p>Matteo Busan</p>
-									<p className="el_founder pt-2">Founder, Coder and Crafter</p>
-								</div>
-							</div>
-						</div>
+			<div className="detail_component">
+				<div className="el_img d-none d-md-block py-3">
+					<img src="/images/logos/iride.svg" alt="Iride logo" />
+				</div>
+				<div className="el_title pb-4">
+					<h1>Man at work</h1>
+				</div>
+				<div className="el_section row  justify-content-center justify-content-md-between">
+					<div className="el_parag col-12 col-md-6 col-lg-8">
+						<p className="el_txt py-2 py-lg-4">
+							<i>
+								Behind the scenes, it’s a fairly simple setup. A 28 by 8 LED matrix running on 5V, driven by
+								an Arduino Pro Micro that keeps everything moving at its own pace. No inputs, no interaction,
+								just a small system doing exactly what it was built to do, over and over again.
+							</i>
+						</p>
+						<p className="el_txt obj_gray_txt py-2 py-lg-4">
+							The idea came from a habit. Watching other people play that classic falling-block game as a way
+							to switch off for a bit. It worked surprisingly well, until a very reasonable question showed up:
+							why watch someone play when you could just watch the game play itself? So this happened. A
+							self-running version that doesn’t need anyone, quietly doing its thing in a frame. It’s probably
+							a worse distraction now than the videos ever were, but at least it’s honest about it. And
+							honestly, that feels like an upgrade.
+						</p>
+					</div>
+					<div className="el_img_parag obj_img col-12 col-md-5 col-lg-3 pt-5 pt-md-0">
+						<img src="/images/other/MANATWORK.svg"></img>
 					</div>
 				</div>
 			</div>

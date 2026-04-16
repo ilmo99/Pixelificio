@@ -117,6 +117,9 @@ export default async function RootLayout({ children, params }) {
 	return (
 		<html lang={lang} className={fontClasses} data-scroll-behavior="smooth">
 			{/* <body className="bg_color_white fx_load"> */}
+			<head>
+				<title>Pixelificio</title>
+			</head>
 			<body className="bg_color_white">
 				{/* USER AND LOCALE CONTEXT (navbar | footer) */}
 				<ClientProvider lang={lang} dict={translates}>
@@ -133,7 +136,7 @@ export default async function RootLayout({ children, params }) {
 								</div>
 
 								<div className="grid_cont content">{children}</div>
-								<div className="grid_cont ms-auto">
+								<div className="grid_cont footer ms-auto">
 									<FooterComponent iride={{ src: "/images/logos/iride.svg", width: 16, height: 16 }} />
 								</div>
 							</div>

@@ -74,7 +74,7 @@ export default async function HomePage({ params }) {
 							{mockdata.frame.map((p) => (
 								<ProjectSectionComponent
 									key={p.id}
-									imgurl={p.imgurl}
+									imghover={p.imghover}
 									projtitle={p.projtitle}
 									projsub={p.projsub}
 									projabs={p.projabs}

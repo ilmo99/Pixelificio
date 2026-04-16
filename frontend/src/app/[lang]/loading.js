@@ -8,7 +8,9 @@ export default function Loading() {
 				</div>
 
 				<div className="tw:flex tw:flex-col tw:items-center">
-					<p className="small tw:text-[#003a53] tw:font-semibold tw:mb-1">Loading...</p>
+					<p className="small tw:text-[#003a53] tw:font-semibold tw:mb-1">
+						Stiamo caricando il sito, scusa ci vorrà un po' perché la porta 3000 non si voleva aprire...
+					</p>
 				</div>
 
 				<div className="tw:flex tw:space-x-1">

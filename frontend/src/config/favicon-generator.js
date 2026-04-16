@@ -12,8 +12,8 @@ export const FaviconGenerator = {
 	icons: {
 		// Standard favicon links
 		icon: [
-			{ rel: "icon", type: "image/svg+xml", url: "/favicon/favicon.svg" },
-			{ rel: "icon", type: "image/png", sizes: "96x96", url: "/favicon/favicon-96x96.png" },
+			{ rel: "icon", type: "image/svg+xml", url: "/favicon/favicon.ico" },
+			{ rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon/favicon-32x32.png" },
 		],
 
 		// Apple touch icon for iOS home screen
