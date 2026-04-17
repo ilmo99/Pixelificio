@@ -5,21 +5,59 @@
 // <<<<< Controllers — END
 
 .grid_component {
-	// .obj_example {
-	// 	@at-root .grid_cont:not(:has(.example_target)) #{&} {
-	// 		background-color: $variable_name;
-	// 	}
-	// }
-	.obj_img_grid {
-		max-width: 100%;
-		max-height: auto;
-		object-fit: contain;
-	}
 	.obj_cont_img {
+		position: relative;
 		height: 400px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	// Stile comune per entrambe le immagini
+	.obj_img_base,
+	.obj_img_hover {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+		position: absolute; // Sovrapposte esattamente
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1); // Centrate
+		transition:
+			transform 500ms ease,
+			opacity 500ms ease;
+	}
+
+	// Immagine Base
+	.obj_img_base {
+		opacity: 1;
+		z-index: 1;
+
+		&.fade_out {
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(0.9);
+		}
+	}
+
+	// Immagine Hover
+	.obj_img_hover {
+		opacity: 0;
+		z-index: 2;
+
+		&.fade_in {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1.15);
+		}
+	}
+
+	// Effetto Scale al hover del contenitore padre (opzionale, se vuoi che entrambe ingrandiscano)
+	&:hover {
+		.obj_img_base,
+		.obj_img_hover {
+		}
 	}
 }
-
 /////
 ////
 /*/ ==================== @media ==================== /*/

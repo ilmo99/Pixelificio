@@ -7,6 +7,48 @@
 @use "@/scss/controllers/extends" as *; // controller for modules
 // <<<<< Controllers — END
 
+// ANIMATION
+
+@keyframes myAnime {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+		transform: translate(1200px);
+	}
+	25% {
+		opacity: 0.2;
+		transform: translate(40px);
+		transform: scale(0.1);
+	}
+	75% {
+		transform: scale(0.8);
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0px);
+		transform: scale(1);
+	}
+}
+
+@keyframes myEntrata {
+	0% {
+		
+	}	
+	25% {
+
+	}
+	75% {
+
+	}
+	100% {
+
+	}
+}
+
+
+
+
 // Selection. <<IN>>
 ::-moz-selection {
 	// Firefox.

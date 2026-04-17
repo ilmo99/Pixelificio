@@ -5,17 +5,9 @@
 // <<<<< Controllers — END
 
 .hero_frame_component {
-	// .obj_hero_img {
-	// 	opacity: 0;
-	// 	transform: translateX(-120px);
-	// 	transition:
-	// 		opacity 0.6s ease-out,
-	// 		transform 0.6s ease-out;
-	// }
-	// &.is-visible {
-	// 	opacity: 1;
-	// 	transform: translateX(0);
-	// }
+	.obj_hero_img {
+		animation: myAnime 1000ms linear 500ms 1;
+	}
 }
 
 /////

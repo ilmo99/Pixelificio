@@ -60,8 +60,8 @@ export async function HeroFrameComponent({ props, mockdata }) {
 			<div className="hero_frame_component">
 				<div className="block_cont">
 					<div className="block_wrap flex-column">
-						<div className="el_img obj_hero_img d-none d-md-block py-3">
-							<img src="/images/logos/iride.svg" alt="Iride logo" />
+						<div className="el_img d-none d-md-block py-3">
+							<img className=" obj_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
 						<div className="el_text obj_hero_txt py-3 row">
 							<div className="col-12 col-xl-6">

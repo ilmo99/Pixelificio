@@ -66,14 +66,21 @@ export function GridComponent({ props }) {
 								<a
 									onMouseEnter={() => setHover(p.id)}
 									onMouseLeave={() => setHover(null)}
-									onTouchStart={() => setHover(p.id)}
-									onTouchEnd={() => setTimeout(() => setHover(null), 200)}
+									// onTouchStart={() => setHover(p.id)}
+									// onTouchEnd={() => setTimeout(() => setHover(null), 200)} soluzione di gipitero
 									href={`/frames/${p.id}`}
 									className="obj_cont_img d-flex justify-content-center">
 									<img
 										data-id={p.id}
-										className="obj_img_grid"
-										src={isHovered === p.id ? p.imghover : p.imgurl}
+										className={`obj_img_base ${isHovered === p.id && "fade_out"}`}
+										src={p.imgurl}
+										alt={p.projtitle}
+										width={p.width}
+										height={p.height}></img>
+									<img
+										data-id={p.id}
+										className={`obj_img_hover ${isHovered === p.id && "fade_in"}`}
+										src={p.imghover}
 										alt={p.projtitle}
 										width={p.width}
 										height={p.height}></img>
