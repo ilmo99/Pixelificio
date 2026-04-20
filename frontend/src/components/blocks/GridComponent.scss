@@ -51,10 +51,15 @@
 		}
 	}
 
-	// Effetto Scale al hover del contenitore padre (opzionale, se vuoi che entrambe ingrandiscano)
-	&:hover {
-		.obj_img_base,
+	.obj_grid_item.is_visible {
+		.obj_img_base {
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(0.9);
+		}
+
 		.obj_img_hover {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1.15);
 		}
 	}
 }

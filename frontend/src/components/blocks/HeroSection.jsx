@@ -63,7 +63,7 @@ export async function HeroSectionComponent({ props }) {
 						<div className="el_img d-none d-md-block py-3">
 							<img className="obj_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
-						<div className="el_text obj_hero_txt justify-content-between py-3">
+						<div className="el_text obj_hero_txt w-lg-75 py-3">
 							<h1>
 								Pixelificio is where digital images are reduced to their essential units and rebuilt as
 								physical, light-based compositions.

@@ -67,16 +67,16 @@ export async function ProjectSectionComponent({ imghover, projtitle, projsub, pr
 						</div>
 						<div className="row pt-6">
 							<div className="col-12 col-md-6 row">
-								<div className="col-3 col-md-2">
+								<div className="col-3 col-lg-2">
 									<h4>Project</h4>
 								</div>
-								<div className="col-9 col-md-8">
+								<div className="col-9 col-lg-8">
 									<h3>{projtitle}</h3>
 									<h4 className="py-1">{projsub}</h4>
 								</div>
 							</div>
-							<div className="col-12 col-md-6 row justify-content-end">
-								<div className="w-100 w-lg-75 w-xl-50">
+							<div className="col-12 col-md-6 row">
+								<div className="col-md-10 col-lg-7 ms-auto">
 									<h5 className=" pb-3">{projabs}</h5>
 									<a href="/frames" className="d-flex">
 										See Project

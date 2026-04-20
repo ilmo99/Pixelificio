@@ -6,7 +6,7 @@
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
 import React, { // React hooks to manage state, context, and side effects {CSR}
 	// 	createContext, // Create a global Context {CSR}
-	useCallback, // Memoize a callback to avoid re-creating it on re-renders {CSR}
+	//  useCallback, // Memoize a callback to avoid re-creating it on re-renders {CSR}
 	// 	useContext, // Consume the nearest <Provider>'s Context value {CSR}
 	useEffect, // Run side effects AFTER screen update (non-blocking; e.g., data fetch, event listener) {CSR}
 	// 	useImperativeHandle, // [NICHE] Expose custom methods to parent refs instead of the DOM node (e.g., `focus()`, `scrollToBottom()`) {CSR}
@@ -55,6 +55,37 @@ export function GridComponent({ props }) {
 	// const lang = useTranslate()["lang"];
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 	const [isHovered, setHover] = useState(null);
+	const [isTouch, setIsTouch] = useState(false);
+	const observerRef = useRef(null);
+
+	useEffect(() => {
+		const hoverDevice = window.matchMedia("(hover: hover) and (pointer: fine)");
+		setIsTouch(!hoverDevice.matches);
+
+		if (!hoverDevice.matches) {
+			observerRef.current = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						const target = entry.target;
+						if (entry.isIntersecting) {
+							target.classList.add("is_visible");
+						} else {
+							target.classList.remove("is_visible");
+						}
+					});
+				},
+				{ threshold: 0.8 }
+			);
+			const items = document.querySelectorAll(".obj_grid_item");
+			items.forEach((item) => observerRef.current?.observe(item));
+		}
+
+		return () => {
+			if (observerRef.current) {
+				observerRef.current.disconnect();
+			}
+		};
+	}, []);
 
 	return (
 		<>
@@ -62,7 +93,7 @@ export function GridComponent({ props }) {
 				<div className="container">
 					<div className="row">
 						{mockdata.frame.map((p) => (
-							<div key={p.id} className="col-12 col-md-6 col-xl-4 py-6">
+							<div key={p.id} className="obj_grid_item col-12 col-md-6 col-xl-4 py-6">
 								<a
 									onMouseEnter={() => setHover(p.id)}
 									onMouseLeave={() => setHover(null)}
