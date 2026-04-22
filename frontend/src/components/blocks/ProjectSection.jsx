@@ -43,13 +43,14 @@
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
 
 // 4. Relative internal (same directory)
+import * as constants from "@/config/constants"; // Global constants shared across the app
 import "./ProjectSection.scss";
 
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export async function ProjectSectionComponent({ imghover, projtitle, projsub, projabs }) {
+export async function ProjectSectionComponent({ imghover, projtitle, projsub, projabs, width, height }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -62,24 +63,28 @@ export async function ProjectSectionComponent({ imghover, projtitle, projsub, pr
 					<div className="size_wrap py-6 py-md-8">
 						<div className="row">
 							<div className="d-flex col-12 col-lg-7 justify-content-center align-items-center">
-								<img className="el_img obj_proj_img" src={imghover}></img>
+								<img
+									className="el_img obj_proj_img"
+									src={`${constants.MEDIA_PATH}/uploads/${imghover}`}
+									width={width}
+									height={height}></img>
 							</div>
 						</div>
-						<div className="row pt-6">
+						<div className="row pt-6 fx slide fade bottom">
 							<div className="col-12 col-md-6 row">
 								<div className="col-3 col-lg-2">
 									<h4>Project</h4>
 								</div>
 								<div className="col-9 col-lg-8">
 									<h3>{projtitle}</h3>
-									<h4 className="py-1">{projsub}</h4>
+									<h4>{projsub}</h4>
 								</div>
 							</div>
 							<div className="col-12 col-md-6 row">
-								<div className="col-md-10 col-lg-7 ms-auto">
-									<h5 className=" pb-3">{projabs}</h5>
+								<div className="col-md-10 col-lg-7 ms-auto pt-4 pt-md-0">
+									<h5 className="pb-5">{projabs}</h5>
 									<a href="/frames" className="d-flex">
-										See Project
+										See Projects
 										<img className="ps-2" src="/images/icons/arrow.svg" />
 									</a>
 								</div>

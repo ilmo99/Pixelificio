@@ -9,40 +9,11 @@ import { getDictionary } from "@/app/dictionaries"; // Fetch translation diction
 import { TranslateProvider } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 import "./page.scss";
 import mockdata from "mockdata.json";
+import { get } from "http";
 
 // ===============================================
 // ## ############################################
 // ===============================================
-
-// const PROJECT_INFO = [
-// 	{
-// 		id: 1,
-// 		imgurl: "/images/other/MANATWORK.svg",
-// 		projtitle: "Man at Work",
-// 		projsub: "Falling blocks that stack themselves inside a frame",
-// 		projabs:
-// 			"A familiar set of shapes dropping one after the other, finding their place without any help. Lines form, disappear, and everything starts over. No player, no inputs, just the system doing its thing like it always has.",
-// 	},
-// 	{
-// 		id: 2,
-// 		imgurl: "/images/other/DONTMINDME.svg",
-// 		projtitle: "Don't Mind Me",
-// 		projsub: "A curious listeners that turn toward whoever is speaking",
-// 		projabs:
-// 			"A frame just minding his business until someone says something. Then he turn, like they suddenly care. A small reminder that being heard is sometimes more about timing than intention.",
-// 	},
-// 	{
-// 		id: 3,
-// 		imgurl: "/images/other/CONNOR.svg",
-// 		projtitle: "Connor",
-// 		projsub: "A double-side red circle marking a system starting to think for itself",
-// 		projabs:
-// 			"A red circle doing a lot of heavy lifting. It marks the exact point where a perfectly functioning system starts having second thoughts. You know, the moment things get interesting.",
-// 	},
-// 	// {id: 4, imgurl: , projtitle: , projsub: , projabs: },
-// 	// {id: 5, imgurl: , projtitle: , projsub: , projabs: },
-// 	// {id: 6, imgurl: , projtitle: , projsub: , projabs: },
-// ];
 
 export default async function HomePage({ params }) {
 	// Get the language from route parameters
@@ -51,6 +22,12 @@ export default async function HomePage({ params }) {
 	// Fetch translation dictionary based on language
 	const translates = await getDictionary(lang);
 
+	const url = `${constants.BACKEND_URL_SERVER}/api/article`;
+	const options = { method: "GET", headers: { Accept: "application/json" } };
+
+	const response = await fetch(url, options);
+	const data = await response.json();
+	console.log(data);
 	// Fetch data from the API with language header
 	// const heroResponse = await fetch(`${constants.BASE_URL}/api/${lang}/home/<section>`, {
 	// 	method: "GET",
@@ -71,15 +48,15 @@ export default async function HomePage({ params }) {
 							<div className="obj_proj_title mt-10 pt-6">
 								<h2>Latest works</h2>
 							</div>
-							{mockdata.frame.map((p) => (
+							{data.map((p) => (
 								<ProjectSectionComponent
 									key={p.id}
-									imghover={p.imghover}
-									projtitle={p.projtitle}
-									projsub={p.projsub}
-									projabs={p.projabs}
-									// width={p.width}
-									// height={p.height}
+									imghover={p.media[0].image_path}
+									projtitle={p.title}
+									projsub={p.subtitle}
+									projabs={p.abstract}
+									width={p.media[1].width / 7.5}
+									height={p.media[1].height / 7.5}
 								/>
 							))}
 						</div>

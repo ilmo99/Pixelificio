@@ -77,14 +77,16 @@ export const NavbarSimple = function ({ ...props }) {
 							width={props.logo.width}
 							height={props.logo.height}
 						/>
-						<Image
-							className="logo_iride d-md-none"
-							src={props.iride.src}
-							alt="Iride"
-							priority={true}
-							width={props.iride.width}
-							height={props.iride.height}
-						/>
+						<div className="fx slide left fade">
+							<Image
+								className="logo_iride d-md-none"
+								src={props.iride.src}
+								alt="Iride"
+								priority={true}
+								width={props.iride.width}
+								height={props.iride.height}
+							/>
+						</div>
 					</Link>
 					<div className="el_link d-none d-md-flex h-100 ms-auto">
 						<Link href={`/${lang}`} className="el_nav_link obj_nav_link align-items-center px-4">

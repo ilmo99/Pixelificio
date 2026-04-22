@@ -60,8 +60,8 @@ export async function AboutComponent({ props }) {
 			<div className="About_component">
 				<div className="size_cont">
 					<div className="block_wrap">
-						<div className="el_img d-none d-md-block py-3">
-							<img className="obj_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
+						<div className="el_img d-none d-md-block py-3 fx slide right edge left slow">
+							<img className="el_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
 						<div className="el_text obj_hero_txt col-lg-11 pe-lg-4 pt-3 pb-6">
 							<h1>
@@ -70,19 +70,19 @@ export async function AboutComponent({ props }) {
 							</h1>
 						</div>
 						<div className="row">
-							<div className="el_num col-md-4">
-								<p className="obj_numb biggest">1659</p>
-								<p>Glowing pixels in our frames</p>
+							<div className="el_num col-md-4 text-white fx reveal right">
+								<p className="obj_numb biggest text-black">1659</p>
+								<p className="text-black">Glowing pixels in our frames</p>
 							</div>
-							<div className="el_num pt-4 pt-md-0 ps-md-4 col-md-4">
-								<p className="obj_numb biggest">6</p>
-								<p>Crafted frames</p>
+							<div className="el_num pt-4 pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
+								<p className="obj_numb biggest text-black">6</p>
+								<p className="text-black">Crafted frames</p>
 							</div>
-							<div className="pt-4 pt-md-0 ps-md-4 col-md-4">
-								<p className="obj_nubm biggest">2</p>
-								<p>Arduino boards sacrificed</p>
+							<div className="pt-4 pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
+								<p className="obj_nubm biggest text-black">2</p>
+								<p className="text-black">Arduino boards sacrificed</p>
 							</div>
-							<div className="el_team row mt-4 pt-5">
+							<div className="el_team row mt-4 py-5">
 								<div className="col-md-6">
 									<h1>Our Team</h1>
 								</div>

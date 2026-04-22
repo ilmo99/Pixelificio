@@ -13,23 +13,7 @@ class Article extends Model
 	use HasFactory;
 	use StorableMedia;
 
-	protected $fillable = [
-		"title_italian",
-		"title_english",
-		"meta_title_italian",
-		"meta_title_english",
-		"subtitle_italian",
-		"subtitle_english",
-		"abstract_italian",
-		"abstract_english",
-		"body_italian",
-		"body_english",
-		"meta_body_italian",
-		"meta_body_english",
-		"author",
-		"published",
-		"strillo",
-	];
+	protected $fillable = ["title", "subtitle", "abstract", "body_formatted", "intro_body_formatted", "published", "height", "Width"];
 
 	public function media()
 	{
@@ -46,6 +30,6 @@ class Article extends Model
 	 */
 	public function getDisplayAttribute()
 	{
-		return $this->title_italian;
+		return $this->title;
 	}
 }

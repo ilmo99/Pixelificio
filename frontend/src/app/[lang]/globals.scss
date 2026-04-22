@@ -31,17 +31,6 @@
 	}
 }
 
-@keyframes myEntrata {
-	0% {
-	}
-	25% {
-	}
-	75% {
-	}
-	100% {
-	}
-}
-
 // Selection. <<IN>>
 ::-moz-selection {
 	// Firefox.
@@ -292,10 +281,10 @@ h4,
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
 		$font-size-min: 1.3rem, // `font-size` on mobile viewport (< 575.98px)
-		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
+		$line-height-mobile: 1.1, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
 		$font-size-max: 1.3rem, // `font-size` on desktop viewport (> 576px)
-		$line-height-desktop: 1.2, // `line-height` multiplier on desktop viewport (> 576px)
+		$line-height-desktop: 1.1, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
 		// $important: "!important", // uncomment to add `!important` to the string

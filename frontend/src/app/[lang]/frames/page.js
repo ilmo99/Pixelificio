@@ -33,6 +33,13 @@ export default async function FramesPage({ params }) {
 	// Fetch translation dictionary based on language
 	const translates = await getDictionary(lang);
 
+	const url = `${constants.BACKEND_URL_SERVER}/api/article`;
+	const options = { method: "GET", headers: { Accept: "application/json" } };
+
+	const response = await fetch(url, options);
+	const data = await response.json();
+	console.log(data);
+
 	// Fetch data from the API with language header
 	// const dataResponse = await fetch(`${constants.APP_URL}/api/${lang}/<route>/<section>`, {
 	// 	method: "GET",
@@ -52,7 +59,7 @@ export default async function FramesPage({ params }) {
 						<div className="cont_mw_1">
 							<div>
 								<HeroFrameComponent mockdata={mockdata} />
-								<GridComponent />
+								<GridComponent mockdata={data} />
 							</div>
 						</div>
 					</section>

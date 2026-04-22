@@ -8,7 +8,7 @@
 // 	createContext, // Create a global Context {CSR}
 // 	useCallback, // Memoize a callback to avoid re-creating it on re-renders {CSR}
 // 	useContext, // Consume the nearest <Provider>'s Context value {CSR}
-// 	useEffect, // Run side effects AFTER screen update (non-blocking; e.g., data fetch, event listener) {CSR}
+// useEffect, // Run side effects AFTER screen update (non-blocking; e.g., data fetch, event listener) {CSR}
 // 	useImperativeHandle, // [NICHE] Expose custom methods to parent refs instead of the DOM node (e.g., `focus()`, `scrollToBottom()`) {CSR}
 // 	useLayoutEffect, // [RARE] Run side effects BEFORE screen update (blocking; e.g., layout reads/writes) {CSR}
 // 	useMemo, // Memoize a value to avoid re-computing it on re-renders {CSR}
@@ -60,7 +60,7 @@ export async function HeroSectionComponent({ props }) {
 			<div className="hero_section_component">
 				<div className="block_cont">
 					<div className="block_wrap flex-column">
-						<div className="el_img d-none d-md-block py-3">
+						<div className="el_img d-none d-md-block py-3 fx slide right edge left slow">
 							<img className="obj_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
 						<div className="el_text obj_hero_txt w-lg-75 py-3">

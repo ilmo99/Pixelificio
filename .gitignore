@@ -6,6 +6,8 @@
 /.vscode/
 /.DS_Store
 /**/.directory
+/vendor
+/artisan
 
 # backend
 /backend/storage/backups/

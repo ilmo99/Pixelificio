@@ -135,7 +135,7 @@ export default async function RootLayout({ children, params }) {
 									/>
 								</div>
 
-								<div className="grid_cont content">{children}</div>
+								<div className="grid_cont content min-vh-75">{children}</div>
 								<div className="grid_cont footer ms-auto">
 									<FooterComponent iride={{ src: "/images/logos/iride.svg", width: 16, height: 16 }} />
 								</div>

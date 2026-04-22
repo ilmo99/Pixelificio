@@ -1,22 +1,22 @@
-// "use client"; // marks module for full browser execution
+"use client"; // marks module for full browser execution
 //
 // import { FooterComponent } from "@/components/footers/"; // File import statement
 
 // 1. Core imports (React & Next.js)
 import Image from "next/image";
 import Link from "next/link"; // Client-side routing with automatic pre-fetching {CSR}
-// import React, { // React hooks to manage state, context, and side effects {CSR}
-// 	createContext, // Create a global Context {CSR}
-// 	useCallback, // Memoize a callback to avoid re-creating it on re-renders {CSR}
-// 	useContext, // Consume the nearest <Provider>'s Context value {CSR}
-// 	useEffect, // Run side effects AFTER screen update (non-blocking; e.g., data fetch, event listener) {CSR}
-// 	useImperativeHandle, // [NICHE] Expose custom methods to parent refs instead of the DOM node (e.g., `focus()`, `scrollToBottom()`) {CSR}
-// 	useLayoutEffect, // [RARE] Run side effects BEFORE screen update (blocking; e.g., layout reads/writes) {CSR}
-// 	useMemo, // Memoize a value to avoid re-computing it on re-renders {CSR}
-// 	useReducer, // Manage complex state logic with a reducer function {CSR}
-// 	useRef, // Create a mutable ref that persists across renders {CSR}
-// 	useState, // Manage local component state {CSR}
-// } from "react";
+import React, { // React hooks to manage state, context, and side effects {CSR}
+	// 	createContext, // Create a global Context {CSR}
+	// 	useCallback, // Memoize a callback to avoid re-creating it on re-renders {CSR}
+	// 	useContext, // Consume the nearest <Provider>'s Context value {CSR}
+	useEffect, // Run side effects AFTER screen update (non-blocking; e.g., data fetch, event listener) {CSR}
+	// 	useImperativeHandle, // [NICHE] Expose custom methods to parent refs instead of the DOM node (e.g., `focus()`, `scrollToBottom()`) {CSR}
+	// 	useLayoutEffect, // [RARE] Run side effects BEFORE screen update (blocking; e.g., layout reads/writes) {CSR}
+	// 	useMemo, // Memoize a value to avoid re-computing it on re-renders {CSR}
+	// 	useReducer, // Manage complex state logic with a reducer function {CSR}
+	useRef, // Create a mutable ref that persists across renders {CSR}
+	// 	useState, // Manage local component state {CSR}
+} from "react";
 
 // 2. External imports (third-party libraries)
 // import axios from "axios"; // Promise-based HTTP client for data fetching (API requests) {CSR|SSR}
@@ -50,7 +50,7 @@ import "./FooterComponent.scss";
 // ## ############################################
 // ===============================================
 
-export async function FooterComponent({ ...props }) {
+export function FooterComponent({ ...props }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -60,11 +60,11 @@ export async function FooterComponent({ ...props }) {
 		<>
 			<div className="footer_component cont_space_1">
 				<div className="cont_mw_1">
-					<div className="el_foot_title obj_foot_title row py-5">
+					<div className="el_foot_title obj_foot_title row py-5 ">
 						<h6 className="text-center">Curious how they look in your space?</h6>
 					</div>
 					<div className="el_foot_cont row py-4 py-lg-6">
-						<div className="el_logo col-12 col-md-2 col-lg-6">
+						<div className="el_logo col-12 col-md-2 col-lg-6 fx slide left fade slow">
 							<img className="logo_iride obj_logo img-fluid" src={props.iride.src} alt="Iride" />
 						</div>
 						<div className="el_contatti col-12 col-md-4 col-lg-4">

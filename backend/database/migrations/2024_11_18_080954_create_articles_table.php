@@ -12,21 +12,12 @@ return new class extends Migration {
 	{
 		Schema::create("articles", function (Blueprint $table) {
 			$table->id();
-			$table->string("title_italian");
-			$table->string("title_english")->nullable();
-			$table->string("meta_title_italian")->nullable();
-			$table->string("meta_title_english")->nullable();
-			$table->string("subtitle_italian")->nullable();
-			$table->string("subtitle_english")->nullable();
-			$table->string("abstract_italian")->nullable();
-			$table->string("abstract_english")->nullable();
-			$table->longText("body_italian")->nullable();
-			$table->longText("body_english")->nullable();
-			$table->longText("meta_body_italian")->nullable();
-			$table->longText("meta_body_english")->nullable();
-			$table->string("author")->nullable();
+			$table->string("title");
+			$table->string("subtitle")->nullable();
+			$table->string("abstract")->nullable();
+			$table->longText("body_formatted")->nullable();
+			$table->longText("intro_body_formatted")->nullable();
 			$table->boolean("published")->default(false);
-			$table->boolean("strillo")->default(false);
 			$table->timestamps();
 		});
 	}

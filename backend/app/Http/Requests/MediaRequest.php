@@ -26,7 +26,7 @@ class MediaRequest extends FormRequest
 	{
 		return [
 			"title" => "required",
-			"image_path" => "nullable|image|mimes:jpeg,png,jpg,gif,webp|max:1500",
+			"image_path" => "nullable|file|mimes:jpeg,png,jpg,gif,webp,svg|max:5000",
 			"webm_path" => "nullable|file|mimes:webm|max:3000",
 			"mp4_path" => "nullable|mimes:mp4|max:3000",
 			"mp3_path" => "nullable|file|mimes:mp3|max:10000",

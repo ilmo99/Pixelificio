@@ -31,7 +31,11 @@ export function isElementFullyInViewport(element) {
 		return rect.top < windowHeight && rect.bottom > 0 && rect.left < windowWidth && rect.right > 0;
 	}
 
-	return rect.top >= 0 && rect.bottom <= windowHeight;
+	// return rect.top >= 0 && rect.bottom <= windowHeight;
+
+	const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+	const visibleRatio = visibleHeight / rect.height;
+	return visibleRatio >= 0.1; // 10% di visibilità richiesto
 }
 
 // Get the longer duration between animation and transition (in ms)

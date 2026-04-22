@@ -43,7 +43,14 @@ export default async function DetailPage({ params }) {
 	// });
 	// const dataResponseJson = await dataResponse.json();
 
-	const title = frame.find((p) => p.id === Number(params.id));
+	const url = `${constants.BACKEND_URL_SERVER}/api/article`;
+	const options = { method: "GET", headers: { Accept: "application/json" } };
+
+	const response = await fetch(url, options);
+	const data = await response.json();
+	console.log(data);
+
+	const title = data.find((p) => p.id === Number(params.id));
 
 	if (!title) {
 		return (
@@ -67,18 +74,20 @@ export default async function DetailPage({ params }) {
 					<section className="cont_space_1">
 						<div className="cont_mw_1 pb-5">
 							<div className="detail_component">
-								<div className="el_img d-none d-md-block py-3">
+								<div className="el_img d-none d-md-block py-3 fx slide right edge left slow">
 									<img src="/images/logos/iride.svg" alt="Iride logo" />
 								</div>
-								<div className="el_title pb-4">
-									<h1>{title.projtitle}</h1>
+								<div className="el_title py-6">
+									<h1>{title.title}</h1>
 								</div>
 								<div className="el_section row  justify-content-center justify-content-md-between">
 									<div className="el_parag col-12 col-md-6 col-lg-8">
-										<p className="el_txt py-2 py-lg-4">
-											<i>{title.italictxt}</i>
-										</p>
-										<p className="el_txt obj_gray_txt py-2 py-lg-4">{title.bodytxt}</p>
+										<div className="el_txt pb-2 pb-lg-4">
+											<div dangerouslySetInnerHTML={{ __html: title.intro_body_formatted }}></div>
+										</div>
+										<div className="el_txt obj_gray_txt py-2 py-lg-4">
+											<div dangerouslySetInnerHTML={{ __html: title.body_formatted }}></div>
+										</div>
 										<div className="el_griglia_img row">
 											<div className="col-6">
 												<img></img>
@@ -97,7 +106,7 @@ export default async function DetailPage({ params }) {
 										</div>
 									</div>
 									<div className="el_img_parag obj_img col-12 col-md-5 col-lg-3 pt-5 pt-md-0">
-										<img src={title.imghover}></img>
+										<img src={`${constants.MEDIA_PATH}/uploads/${title.media[0].image_path}`}></img>
 									</div>
 								</div>
 							</div>

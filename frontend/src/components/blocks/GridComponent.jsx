@@ -44,12 +44,14 @@ import React, { // React hooks to manage state, context, and side effects {CSR}
 
 // 4. Relative internal (same directory)
 import "./GridComponent.scss";
-import mockdata from "mockdata.json";
+// import mockdata from "mockdata.json";
+
+import * as constants from "@/config/constants";
 // ===============================================
 // ## ############################################
 // ===============================================
 
-export function GridComponent({ props }) {
+export function GridComponent({ mockdata }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -92,7 +94,7 @@ export function GridComponent({ props }) {
 			<div className="grid_component">
 				<div className="container">
 					<div className="row">
-						{mockdata.frame.map((p) => (
+						{mockdata.map((p) => (
 							<div key={p.id} className="obj_grid_item col-12 col-md-6 col-xl-4 py-6">
 								<a
 									onMouseEnter={() => setHover(p.id)}
@@ -104,17 +106,17 @@ export function GridComponent({ props }) {
 									<img
 										data-id={p.id}
 										className={`obj_img_base ${isHovered === p.id && "fade_out"}`}
-										src={p.imgurl}
-										alt={p.projtitle}
-										width={p.width}
-										height={p.height}></img>
+										src={`${constants.MEDIA_PATH}/uploads/${p.media[1].image_path}`}
+										alt={p.title}
+										width={p.media[1].width / 7.5}
+										height={p.media[1].height / 7.5}></img>
 									<img
 										data-id={p.id}
 										className={`obj_img_hover ${isHovered === p.id && "fade_in"}`}
-										src={p.imghover}
-										alt={p.projtitle}
-										width={p.width}
-										height={p.height}></img>
+										src={`${constants.MEDIA_PATH}/uploads/${p.media[0].image_path}`}
+										alt={p.title}
+										width={p.media[0].width / 7.5}
+										height={p.media[0].height / 7.5}></img>
 								</a>
 							</div>
 						))}
