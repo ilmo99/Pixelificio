@@ -13,7 +13,16 @@ class Article extends Model
 	use HasFactory;
 	use StorableMedia;
 
-	protected $fillable = ["title", "subtitle", "abstract", "body_formatted", "intro_body_formatted", "published", "height", "Width"];
+	protected $fillable = [
+		"title",
+		"subtitle",
+		"abstract",
+		"body_formatted",
+		"intro_body_formatted",
+		"published",
+		"height",
+		"Width",
+	];
 
 	public function media()
 	{
