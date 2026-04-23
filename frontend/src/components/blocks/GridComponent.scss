@@ -36,7 +36,7 @@
 
 		&.fade_out {
 			opacity: 0;
-			transform: translate(-50%, -50%) scale(0.9);
+			transform: translate(-50%, -50%);
 		}
 	}
 
@@ -47,19 +47,19 @@
 
 		&.fade_in {
 			opacity: 1;
-			transform: translate(-50%, -50%) scale(1.15);
+			transform: translate(-50%, -50%);
 		}
 	}
 
 	.obj_grid_item.is_visible {
 		.obj_img_base {
 			opacity: 0;
-			transform: translate(-50%, -50%) scale(0.9);
+			transform: translate(-50%, -50%);
 		}
 
 		.obj_img_hover {
 			opacity: 1;
-			transform: translate(-50%, -50%) scale(1.15);
+			transform: translate(-50%, -50%);
 		}
 	}
 }

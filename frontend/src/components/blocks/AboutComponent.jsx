@@ -34,13 +34,14 @@
 // import { NamedExportModule } from "@/<path>/NamedExport"; // {CSR|SSR}
 //
 // UTILITY IMPORTS:
-// import { getServer } from "@/lib/server"; // Provide server-only values to the current component {SSR}
 // import { useClient } from "@/providers/Client"; // Provide client-only values to the current component {CSR}
 // import { useTranslate } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 //
 // FUTURE REFERENCE IMPORTS:
 // import { Alert, Dialog, Input } from "@/components/ui"; // Accessible component primitives (Radix-based, styled with Tailwind) {CSR}
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
+
+import { getDictionary } from "@/app/dictionaries"; // TODO: Keep this here?
 
 // 4. Relative internal (same directory)
 import "./AboutComponent.scss";
@@ -49,11 +50,10 @@ import "./AboutComponent.scss";
 // ## ############################################
 // ===============================================
 
-export async function AboutComponent({ props }) {
-	// const ssr = await getServer();
-	// const csr = useClient();
-	// const lang = useTranslate()["lang"];
-	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
+export async function AboutComponent({ lang }) {
+	const ssr = await getServer();
+	const translates = await getDictionary(lang);
+	console.log(lang);
 
 	return (
 		<>
@@ -71,7 +71,9 @@ export async function AboutComponent({ props }) {
 						</div>
 						<div className="row">
 							<div className="el_num col-md-4 text-white fx reveal right">
-								<p className="obj_numb biggest text-black">1659</p>
+								<p className="obj_numb biggest text-black">
+									{translates?.[ssr.page]?.["glowing_pixels"]?.[lang] ?? "Translate fallback"}
+								</p>
 								<p className="text-black">Glowing pixels in our frames</p>
 							</div>
 							<div className="el_num pt-4 pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">

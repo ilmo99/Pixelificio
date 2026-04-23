@@ -13,13 +13,13 @@
 // 3. Absolute internal (`@/` alias)
 // import DefaultExportModule from "@/<path>/DefaultExport";
 // import { NamedExportModule } from "@/<path>/NamedExport";
-import * as constants from "@/config/constants"; // Global constants shared across the app
+// import * as constants from "@/config/constants"; // Global constants shared across the app
 import { getDictionary } from "@/app/dictionaries"; // Fetch translation dictionary based on language
-import { TranslateProvider } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
+// import { TranslateProvider } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
+import { getServer } from "@/lib/server"; // Provide server-only values to the current component {SSR}
 
 // 4. Relative internal (same directory)
 import "./page.scss";
-import { AboutComponent } from "@/components/blocks/AboutComponent";
 
 // ===============================================
 // ## ############################################
@@ -28,7 +28,7 @@ import { AboutComponent } from "@/components/blocks/AboutComponent";
 export default async function AboutPage({ params }) {
 	// Get the language from route parameters
 	const { lang } = await params;
-
+	const ssr = await getServer();
 	// Fetch translation dictionary based on language
 	const translates = await getDictionary(lang);
 
@@ -48,8 +48,54 @@ export default async function AboutPage({ params }) {
 			<div className="about_page">
 				<div className="page_cont">
 					<section className="cont_space_1">
-						<div className="cont_mw_1">
-							<AboutComponent />
+						<div className="cont_mw_1 pt-3">
+							<div className="el_img d-none d-md-block py-3 fx slide left fade slow">
+								<img className="el_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
+							</div>
+							<div className="el_text obj_hero_txt col-lg-11 pe-lg-4 pt-3 pb-6">
+								<h1>
+									Our team may be just me, but together we make pixels, circuits, and ideas come to life:
+									mostly with soldering and coffee.
+								</h1>
+							</div>
+							<div className="row">
+								<div className="el_num col-md-4 text-white fx reveal right">
+									<p className="obj_numb biggest text-black">
+										{translates?.[ssr.page]?.["glowing_pixels"]?.[lang] ?? "Translate fallback"}
+									</p>
+									<p className="text-black">Glowing pixels in our frames</p>
+								</div>
+								<div className="el_num pt-4 pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
+									<p className="obj_numb biggest text-black">
+										{translates?.[ssr.page]?.["crafted_frames"]?.[lang] ?? "Translate fallback"}
+									</p>
+									<p className="text-black">Crafted frames</p>
+								</div>
+								<div className="pt-4 pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
+									<p className="obj_nubm biggest text-black">
+										{translates?.[ssr.page]?.["arduino_boards"]?.[lang] ?? "Translate fallback"}
+									</p>
+									<p className="text-black">Arduino boards sacrificed</p>
+								</div>
+								<div className="el_team row mt-4 pt-5 ">
+									<div className="col-md-6 pb-5">
+										<h1>Our Team</h1>
+										<div className="d-none d-md-block pt-4">
+											<p>Matteo Busan</p>
+											<p className="el_founder pt-2 mb-2">Founder, Coder and Crafter</p>
+											<a className="el_founder p">Link Instagram</a>
+										</div>
+									</div>
+									<div className="col-md-6">
+										<img src="/images/other/Matt_Caricatura.png"></img>
+										<div className="d-block d-md-none pt-6">
+											<p>Matteo Busan</p>
+											<p className="el_founder pt-2 mb-2">Founder, Coder and Crafter</p>
+											<a className="el_founder">Link Instagram</a>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</section>
 				</div>

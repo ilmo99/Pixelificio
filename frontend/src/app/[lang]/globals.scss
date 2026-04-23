@@ -208,10 +208,10 @@ h1,
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
 		$font-size-min: 4rem, // `font-size` on mobile viewport (< 575.98px)
-		$line-height-mobile: 1, // `line-height` multiplier on mobile viewport (< 575.98px)
+		$line-height-mobile: 0.8, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
 		$font-size-max: 4rem, // `font-size` on desktop viewport (> 576px)
-		$line-height-desktop: 1, // `line-height` multiplier on desktop viewport (> 576px)
+		$line-height-desktop: 0.8, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
 		// $important: "!important", // uncomment to add `!important` to the string
@@ -1466,8 +1466,8 @@ input {
 // 	}
 // }
 
-a:hover {
-	opacity: 0.8;
+a:hover:not(a:has(img)) {
+	opacity: 0.8; //	No opacity on hover (desgin request)
 }
 
 ul {
@@ -1534,7 +1534,7 @@ ul {
 
 @media (max-width: 991.98px) {
 	.container_structure {
-		&.nav_extra {
+		&._extra {
 			min-height: calc(100vh - calc($max_height_extra + $footer_min_height)); // `_variables.scss`
 			// margin-top: $max_height_extra; // `_variables.scss`
 

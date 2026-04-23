@@ -41,7 +41,7 @@ export async function getServer() {
 	return {
 		...(await getDeviceInfo()),
 		...(await getPathInfo()),
-		user: await fetchUser(),
-		isLoggedIn: user !== undefined,
+		// user: await fetchUser(),
+		// isLoggedIn: user !== undefined,
 	};
 }

@@ -17,6 +17,7 @@ return new class extends Migration {
 			$table->string("abstract")->nullable();
 			$table->longText("body_formatted")->nullable();
 			$table->longText("intro_body_formatted")->nullable();
+			$table->boolean("strillo_home")->nullable();
 			$table->boolean("published")->default(false);
 			$table->timestamps();
 		});

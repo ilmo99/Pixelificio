@@ -49,8 +49,8 @@ import "./ProjectSection.scss";
 // ===============================================
 // ## ############################################
 // ===============================================
-
-export async function ProjectSectionComponent({ imghover, projtitle, projsub, projabs, width, height }) {
+// imghover, projtitle, projsub, projabs, width, height
+export async function ProjectSectionComponent({ ...props }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
@@ -60,31 +60,31 @@ export async function ProjectSectionComponent({ imghover, projtitle, projsub, pr
 		<>
 			<div className="project_section_component">
 				<div className="block_cont">
-					<div className="size_wrap py-6 py-md-8">
+					<div className="size_wrap pt-8">
 						<div className="row">
 							<div className="d-flex col-12 col-lg-7 justify-content-center align-items-center">
 								<img
 									className="el_img obj_proj_img"
-									src={`${constants.MEDIA_PATH}/uploads/${imghover}`}
-									width={width}
-									height={height}></img>
+									src={`${constants.MEDIA_PATH}/uploads/${props.imghover}`}
+									width={props.width}
+									height={props.height}></img>
 							</div>
 						</div>
-						<div className="row pt-6 fx slide fade bottom">
+						<div className="row pt-4 fx slide fade bottom">
 							<div className="col-12 col-md-6 row">
 								<div className="col-3 col-lg-2">
 									<h4>Project</h4>
 								</div>
 								<div className="col-9 col-lg-8">
-									<h3>{projtitle}</h3>
-									<h4>{projsub}</h4>
+									<h3>{props.projtitle}</h3>
+									<h4>{props.projsub}</h4>
 								</div>
 							</div>
 							<div className="col-12 col-md-6 row">
 								<div className="col-md-10 col-lg-7 ms-auto pt-4 pt-md-0">
-									<h5 className="pb-5">{projabs}</h5>
-									<a href="/frames" className="d-flex">
-										See Projects
+									<h5 className="pb-5">{props.projabs}</h5>
+									<a href={`/frames/${props.id}`} className="d-flex">
+										See Project
 										<img className="ps-2" src="/images/icons/arrow.svg" />
 									</a>
 								</div>

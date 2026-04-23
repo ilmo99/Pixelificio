@@ -6,6 +6,12 @@
 // <<<<< Controllers — END
 
 .about_page {
+	.el_team {
+		border-top: 1px solid black;
+	}
+	.el_founder {
+		color: gray;
+	}
 }
 
 /////
@@ -34,6 +40,10 @@
 
 @media (max-width: 767.98px) {
 	.about_page {
+		.el_num {
+			border-bottom: 1px solid black;
+			padding-bottom: 1.5rem;
+		}
 	}
 }
 
@@ -86,6 +96,9 @@
 
 @media (min-width: 768px) {
 	.about_page {
+		.el_num {
+			border-right: 1px solid black;
+		}
 	}
 }
 

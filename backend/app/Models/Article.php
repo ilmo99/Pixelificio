@@ -19,6 +19,7 @@ class Article extends Model
 		"abstract",
 		"body_formatted",
 		"intro_body_formatted",
+		"strillo_home",
 		"published",
 		"height",
 		"Width",

@@ -11,6 +11,8 @@ use App\Http\Controllers\ArticleController;
 
 Route::get("/{lang}/{page}/seo", [MetadataController::class, "index"]);
 
+Route::get("/article-home", [ArticleController::class, "home"]);
+
 Route::get("/article", [ArticleController::class, "index"]);
 
 // Route::middleware(["auth:sanctum"])->group(function () {

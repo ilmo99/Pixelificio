@@ -1,7 +1,7 @@
 // Server-Side Rendering (React generates HTML before hydration)
 //
 // import FramePage from "@/page/<route>"; // File import statement
-import { HeroFrameComponent } from "@/components/blocks/HeroFrame";
+import { HeroSectionComponent } from "@/components/blocks/HeroSection";
 
 // 1. Core imports (React & Next.js)
 // import Link from "next/link"; // Client-side routing with automatic pre-fetching
@@ -58,7 +58,26 @@ export default async function FramesPage({ params }) {
 					<section className="cont_space_1">
 						<div className="cont_mw_1">
 							<div>
-								<HeroFrameComponent mockdata={mockdata} />
+								<HeroSectionComponent mockdata={mockdata}>
+									<div className="el_text obj_txt py-3 row">
+										<div className="col-12 col-xl-6">
+											<h1>Frames</h1>
+										</div>
+										<div className="col-12 col-xl-6">
+											<h5 className="pt-5 pt-xl-0">
+												<i>Can a collection of pixel-based artworks capture memories and ideas?</i>{" "}
+												Pixelificio creates pieces that translate digital imagery into light. Explore
+												the collection to see how each frame is carefully designed, hand-soldered,
+												and composed to bring its concept to life.
+											</h5>
+											{data.map((p, i) => (
+												<div key={p.id} className={`pb-1 ${i == 0 && `pt-6`}`}>
+													<a href={`/frames/${p.id}`}>{p.title}</a>
+												</div>
+											))}
+										</div>
+									</div>
+								</HeroSectionComponent>
 								<GridComponent mockdata={data} />
 							</div>
 						</div>

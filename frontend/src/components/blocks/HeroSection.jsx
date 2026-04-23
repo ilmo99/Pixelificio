@@ -34,7 +34,7 @@
 // import { NamedExportModule } from "@/<path>/NamedExport"; // {CSR|SSR}
 //
 // UTILITY IMPORTS:
-// import { getServer } from "@/lib/server"; // Provide server-only values to the current component {SSR}
+import { getServer } from "@/lib/server"; // Provide server-only values to the current component {SSR}
 // import { useClient } from "@/providers/Client"; // Provide client-only values to the current component {CSR}
 // import { useTranslate } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 //
@@ -49,26 +49,23 @@ import "./HeroSection.scss";
 // ## ############################################
 // ===============================================
 
-export async function HeroSectionComponent({ props }) {
-	// const ssr = await getServer();
+export async function HeroSectionComponent({ children }) {
+	const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
+
+	const isHome = ssr.page == "home";
 
 	return (
 		<>
 			<div className="hero_section_component">
 				<div className="block_cont">
-					<div className="block_wrap flex-column">
-						<div className="el_img d-none d-md-block py-3 fx slide right edge left slow">
-							<img className="obj_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
+					<div className="block_wrap flex-column pt-3">
+						<div className="el_img d-none d-md-block py-3 fx slide left fade slow">
+							<img className="el_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
-						<div className="el_text obj_hero_txt w-lg-75 py-3">
-							<h1>
-								Pixelificio is where digital images are reduced to their essential units and rebuilt as
-								physical, light-based compositions.
-							</h1>
-						</div>
+						{children}
 					</div>
 				</div>
 			</div>

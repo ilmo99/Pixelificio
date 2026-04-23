@@ -22,12 +22,11 @@ export default async function HomePage({ params }) {
 	// Fetch translation dictionary based on language
 	const translates = await getDictionary(lang);
 
-	const url = `${constants.BACKEND_URL_SERVER}/api/article`;
+	const url = `${constants.BACKEND_URL_SERVER}/api/article-home`;
 	const options = { method: "GET", headers: { Accept: "application/json" } };
 
 	const response = await fetch(url, options);
 	const data = await response.json();
-	console.log(data);
 	// Fetch data from the API with language header
 	// const heroResponse = await fetch(`${constants.BASE_URL}/api/${lang}/home/<section>`, {
 	// 	method: "GET",
@@ -44,13 +43,21 @@ export default async function HomePage({ params }) {
 				<section className="cont_space_1">
 					<div className="cont_mw_1">
 						<div>
-							<HeroSectionComponent />
+							<HeroSectionComponent>
+								<div className="el_text obj_hero_txt py-3">
+									<h1>
+										Pixelificio is where digital images are reduced to their essential units and rebuilt
+										as physical, light-based compositions.
+									</h1>
+								</div>
+							</HeroSectionComponent>
 							<div className="obj_proj_title mt-10 pt-6">
 								<h2>Latest works</h2>
 							</div>
 							{data.map((p) => (
 								<ProjectSectionComponent
 									key={p.id}
+									id={p.id}
 									imghover={p.media[0].image_path}
 									projtitle={p.title}
 									projsub={p.subtitle}

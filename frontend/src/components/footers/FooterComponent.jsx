@@ -60,7 +60,7 @@ export function FooterComponent({ ...props }) {
 		<>
 			<div className="footer_component cont_space_1">
 				<div className="cont_mw_1">
-					<div className="el_foot_title obj_foot_title row py-5 ">
+					<div className="el_foot_title obj_foot_title row py-5 mt-6 mt-md-8">
 						<h6 className="text-center">Curious how they look in your space?</h6>
 					</div>
 					<div className="el_foot_cont row py-4 py-lg-6">
@@ -73,6 +73,11 @@ export function FooterComponent({ ...props }) {
 								className="d-flex pt-3"
 								href="https://www.google.com/maps/place/Mr+Rex/@33.9206945,-116.7754723,17z/data=!3m1!4b1!4m6!3m5!1s0x80db3f0004e92663:0xf0d7c70a2f883831!8m2!3d33.9206945!4d-116.7728974!16s%2Fg%2F11x37bq6gs?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D">
 								Milan, Italy
+							</a>
+							<a
+								className="d-flex pt-1"
+								href="https://www.google.com/maps/place/Flintstones+Bedrock+City/@35.650556,-112.1526552,15z/data=!4m6!3m5!1s0x8732efd9157aba0f:0xdc970beb8ded01e2!8m2!3d35.6549936!4d-112.1396682!16s%2Fg%2F11s9jrchmc?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D">
+								Venice, Italy
 							</a>
 							<p className="pt-5">CONTACT</p>
 							<a className="d-flex pt-3">+39 346-3197010</a>

@@ -58,9 +58,9 @@ export default async function DetailPage({ params }) {
 				<div className="page_cont">
 					<section className="cont_space_1">
 						<div className="cont_mw_1 pb-5">
-							<div>
+							<p>
 								Non abbiamo trovato il quadro che stavi cercando perché la porta 3000 era chiusa purtroppo :(
-							</div>
+							</p>
 						</div>
 					</section>
 				</div>
@@ -74,7 +74,7 @@ export default async function DetailPage({ params }) {
 					<section className="cont_space_1">
 						<div className="cont_mw_1 pb-5">
 							<div className="detail_component">
-								<div className="el_img d-none d-md-block py-3 fx slide right edge left slow">
+								<div className="el_img d-none d-md-block pb-3 pt-6 fx slide right edge left slow">
 									<img src="/images/logos/iride.svg" alt="Iride logo" />
 								</div>
 								<div className="el_title py-6">
@@ -105,8 +105,10 @@ export default async function DetailPage({ params }) {
 											</div>
 										</div>
 									</div>
-									<div className="el_img_parag obj_img col-12 col-md-5 col-lg-3 pt-5 pt-md-0">
-										<img src={`${constants.MEDIA_PATH}/uploads/${title.media[0].image_path}`}></img>
+									<div className="el_img_parag obj_cont_img col-12 col-md-5 col-lg-3 pt-5 pt-md-0">
+										<img
+											className="obj_img"
+											src={`${constants.MEDIA_PATH}/uploads/${title.media[0].image_path}`}></img>
 									</div>
 								</div>
 							</div>
