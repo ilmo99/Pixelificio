@@ -130,7 +130,7 @@ export default async function RootLayout({ children, params }) {
 								<div className="grid_cont navbar row justify-content-center position-sticky top-0 start-0">
 									{/* <NavSideBurgerComponent menu={menuResponseJson} /> */}
 									{/* <NavSlideTopComponent /> */}
-									<NavbarProva
+									<NavbarSimple
 									// logo={{ src: "/images/logos/pixelificio-logo.svg", width: 119, height: 25 }}
 									// iride={{ src: "/images/logos/iride.svg", width: 16, height: 16 }}
 									/>

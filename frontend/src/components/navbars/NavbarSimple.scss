@@ -6,30 +6,188 @@
 
 .navbar_component {
 	.obj_navbar {
-		background-color: white;
-		height: 4rem;
+		background-color: #fff;
 		border-bottom: 1px solid black;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		width: 100%;
 	}
 
-	.obj_nav_link {
-		height: 100%;
+	.obj_container {
+		max-width: 1200px;
+		margin: 0 auto;
+		// padding: 0 24px 0 0;
+		height: 70px;
 		display: flex;
-		color: black;
-		&:hover {
-			animation: colorchg 1s ease-out 0s 1;
-			animation-fill-mode: forwards;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.obj_logo {
+		.obj_pix {
+			width: 150px;
+			height: auto;
+		}
+		.obj_iride {
+			width: 20px;
+			height: auto;
+		}
+	}
+
+	.obj_desktopMenu {
+		display: none;
+		gap: 40px;
+		margin-left: auto;
+
+		.obj_link {
+			color: #333;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 500;
+			transition: color 0.25s ease;
+
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+
+	.obj_burger {
+		width: 40px;
+		height: 40px;
+		position: relative;
+		display: block;
+		// cursor: pointer;
+		transition: transform 0.32s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+		&:active {
+			transform: scale(0.85);
+		}
+		&.chiptune-step {
+			span {
+				transition: all 0.28s steps(4, end);
+			}
+		}
+		/* === LINEE BASE === */
+		span {
+			position: absolute;
+			left: 4px;
+			width: 32px;
+			height: 5px;
+			background: $color_black;
+			border-radius: 0;
+			transition: all 0.35s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+			transform-origin: center;
+			box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+		}
+
+		/* Posizioni iniziali */
+		span:nth-child(1) {
+			top: 10px;
+		}
+		span:nth-child(2) {
+			top: 18px;
+		}
+		span:nth-child(3) {
+			top: 26px;
+		}
+
+		/* ==================== HAMBURGER (CHIUSO) ==================== */
+		&.collapsed span:nth-child(1) {
+			top: 10px;
+			transform: rotate(0deg);
+			width: 32px;
+			left: 4px;
+		}
+		&.collapsed span:nth-child(2) {
+			top: 18px;
+			transform: rotate(0deg);
+			opacity: 1;
+			width: 32px;
+		}
+		&.collapsed span:nth-child(3) {
+			top: 26px;
+			transform: rotate(0deg);
+			width: 32px;
+			left: 4px;
+		}
+
+		/* ==================== X (APERTO) ==================== */
+		&:not(.collapsed) span:nth-child(1) {
+			top: 18px;
+			transform: rotate(45deg);
+			width: 28px;
+			left: 6px;
+		}
+		&:not(.collapsed) span:nth-child(2) {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+		&:not(.collapsed) span:nth-child(3) {
+			top: 18px;
+			transform: rotate(-45deg);
+			width: 28px;
+			left: 6px;
+		}
+	}
+
+	/* ==================== ANIMAZIONE MENU MOBILE ==================== */
+	.obj_mobileMenu {
+		display: flex;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		background-color: #fff;
+		border-top: 1px solid black;
+		visibility: hidden;
+		flex-direction: column;
+		overflow: hidden;
+
+		/* Stato iniziale (chiuso) */
+		opacity: 0;
+		transform: translateY(-30px);
+		max-height: 0; // ← nuovo, fondamentale per l'animazione
+		transition:
+			opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+			transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+			max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+			visibility 0s linear 0.45s; // ← chiave per la chiusura
+
+		/* Stato aperto */
+		&.open {
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(0);
+			max-height: 70vh; // valore alto abbastanza per contenere tutti i link
+
+			transition:
+				opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+				transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+				max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+				visibility 0s linear 0s; // immediato in apertura
+		}
+
+		.obj_mobileLink {
+			color: #333;
+			text-decoration: none;
+			font-size: 18px;
+			padding: 16px 0;
+			border-bottom: 1px solid black;
+			transition: color 0.25s ease;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			&:hover {
+				color: #000;
+			}
 		}
 	}
 }
 
-@keyframes colorchg {
-	from {
-		background-color: white;
-	}
-	to {
-		background-color: #fff700;
-	}
-}
 /////
 ////
 /*/ ==================== @media ==================== /*/
@@ -108,6 +266,12 @@
 
 @media (min-width: 768px) {
 	.navbar_component {
+		.obj_desktopMenu {
+			display: flex;
+		}
+		.obj_burger {
+			display: none;
+		}
 	}
 }
 

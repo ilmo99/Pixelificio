@@ -9,9 +9,17 @@
 		border-top: 1px solid black;
 		border-bottom: 1px solid black;
 	}
-	// .obj_logo.is_visible {
-	// 	animation: myEntrata 2s ease-out 500ms;
-	// }
+	.obj_logo {
+		transform: translateX(-80px);
+		opacity: 0;
+		transition:
+			transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+			opacity 0.8s ease;
+		&.is_visible {
+			transform: translateX(0px);
+			opacity: 1;
+		}
+	}
 }
 
 /////

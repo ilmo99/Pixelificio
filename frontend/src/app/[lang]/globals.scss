@@ -10,24 +10,13 @@
 // ANIMATION
 
 @keyframes myAnime {
-	0% {
+	from {
+		transform: translateX(-30px);
 		opacity: 0;
-		transform: scale(0);
-		transform: translate(1200px);
 	}
-	25% {
-		opacity: 0.2;
-		transform: translate(40px);
-		transform: scale(0.1);
-	}
-	75% {
-		transform: scale(0.8);
-		opacity: 0.8;
-	}
-	100% {
+	to {
+		transform: translateX(0px);
 		opacity: 1;
-		transform: translate(0px);
-		transform: scale(1);
 	}
 }
 
@@ -65,7 +54,7 @@
 
 ::-webkit-scrollbar {
 	// Background.
-	background-color: $color_gray_medium;
+	background-color: black;
 	width: 8px;
 }
 
@@ -100,8 +89,8 @@
 
 ::-webkit-scrollbar-thumb {
 	// Thumb.
-	background-color: $color_first;
-	border-radius: 50rem;
+	background-color: black;
+	// border-radius: 50rem;
 }
 
 // Deeper layer than ::-webkit-scrollbar-track-piece.

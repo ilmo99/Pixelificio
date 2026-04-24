@@ -38,6 +38,8 @@ import React, { // React hooks to manage state, context, and side effects {CSR}
 // import { useClient } from "@/providers/Client"; // Provide client-only values to the current component {CSR}
 // import { useTranslate } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 //
+
+import useIntersection from "@/hooks/useIntersection";
 // FUTURE REFERENCE IMPORTS:
 // import { Alert, Dialog, Input } from "@/components/ui"; // Accessible component primitives (Radix-based, styled with Tailwind) {CSR}
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
@@ -58,6 +60,11 @@ export function GridComponent({ mockdata }) {
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 	const [isHovered, setHover] = useState(null);
 	const [isTouch, setIsTouch] = useState(false);
+
+	// useIntersection(".obj_grid_item", {
+	// 	thresold: 0.8,
+	// });
+
 	const observerRef = useRef(null);
 
 	useEffect(() => {

@@ -1,4 +1,4 @@
-// "use client"; // marks module for full browser execution
+"use client"; // marks module for full browser execution
 //
 // import { HeroSectionComponent } from "@/components/blocks/HeroSection"; // File import statement
 
@@ -13,8 +13,8 @@
 // 	useLayoutEffect, // [RARE] Run side effects BEFORE screen update (blocking; e.g., layout reads/writes) {CSR}
 // 	useMemo, // Memoize a value to avoid re-computing it on re-renders {CSR}
 // 	useReducer, // Manage complex state logic with a reducer function {CSR}
-// 	useRef, // Create a mutable ref that persists across renders {CSR}
-// 	useState, // Manage local component state {CSR}
+// useRef, // Create a mutable ref that persists across renders {CSR}
+// useState, // Manage local component state {CSR}
 // } from "react";
 
 // 2. External imports (third-party libraries)
@@ -34,10 +34,13 @@
 // import { NamedExportModule } from "@/<path>/NamedExport"; // {CSR|SSR}
 //
 // UTILITY IMPORTS:
-import { getServer } from "@/lib/server"; // Provide server-only values to the current component {SSR}
+// import { getServer } from "@/lib/server"; // Provide server-only values to the current component {SSR}
 // import { useClient } from "@/providers/Client"; // Provide client-only values to the current component {CSR}
 // import { useTranslate } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 //
+
+import useIntersection from "@/hooks/useIntersection";
+
 // FUTURE REFERENCE IMPORTS:
 // import { Alert, Dialog, Input } from "@/components/ui"; // Accessible component primitives (Radix-based, styled with Tailwind) {CSR}
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
@@ -49,21 +52,24 @@ import "./HeroSection.scss";
 // ## ############################################
 // ===============================================
 
-export async function HeroSectionComponent({ children }) {
-	const ssr = await getServer();
+export function HeroSectionComponent({ children }) {
+	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 
-	const isHome = ssr.page == "home";
+	useIntersection(".obj_iride", {
+		thresold: 0,
+		rootMargin: "-100px 0px -60px 0px",
+	});
 
 	return (
 		<>
 			<div className="hero_section_component">
 				<div className="block_cont">
 					<div className="block_wrap flex-column pt-3">
-						<div className="el_img d-none d-md-block py-3 fx slide left fade slow">
-							<img className="el_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
+						<div className="el_img d-none d-md-block py-3 ">
+							<img className="el_hero_img obj_iride" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
 						{children}
 					</div>

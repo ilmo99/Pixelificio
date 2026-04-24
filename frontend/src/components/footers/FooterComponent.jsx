@@ -39,6 +39,7 @@ import React, { // React hooks to manage state, context, and side effects {CSR}
 // import { useClient } from "@/providers/Client"; // Provide client-only values to the current component {CSR}
 // import { useTranslate } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 //
+import useIntersection from "@/hooks/useIntersection";
 // FUTURE REFERENCE IMPORTS:
 // import { Alert, Dialog, Input } from "@/components/ui"; // Accessible component primitives (Radix-based, styled with Tailwind) {CSR}
 // import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"; // Styled chart wrapper and tooltip content (ShadCN + Recharts) {CSR}
@@ -56,6 +57,11 @@ export function FooterComponent({ ...props }) {
 	// const lang = useTranslate()["lang"];
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 
+	useIntersection(".obj_logo", {
+		thresold: 0,
+		rootMargin: "0px 0px -60px 1000px",
+	});
+
 	return (
 		<>
 			<div className="footer_component cont_space_1">
@@ -64,7 +70,7 @@ export function FooterComponent({ ...props }) {
 						<h6 className="text-center">Curious how they look in your space?</h6>
 					</div>
 					<div className="el_foot_cont row py-4 py-lg-6">
-						<div className="el_logo col-12 col-md-2 col-lg-6 fx slide left fade slow">
+						<div className="el_logo col-12 col-md-2 col-lg-6">
 							<img className="logo_iride obj_logo img-fluid" src={props.iride.src} alt="Iride" />
 						</div>
 						<div className="el_contatti col-12 col-md-4 col-lg-4">

@@ -12,12 +12,12 @@ export default function NavbarProva() {
 			<nav className={`${styles.navbar} cont_mw_1`}>
 				<div className={styles.container}>
 					<Link href="/" className={`${styles.logo} d-inline-flex`}>
-						<img src="/images/logos/pixelificio-logo.svg" width="150" height="20" />
+						<img className="pe-3" src="/images/logos/pixelificio-logo.svg" width="150" height="20" />
 						<img
 							className="d-block d-md-none fx slide fade left"
 							src="/images/logos/iride.svg"
-							width="16"
-							height="16"
+							width="20"
+							height="20"
 						/>
 					</Link>
 
