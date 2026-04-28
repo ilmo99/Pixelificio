@@ -5,31 +5,37 @@ import { useEffect, useRef } from "react";
 export default function useIntersection(selector, options = {}) {
 	const observerRef = useRef(null);
 
+	// Destrutturazione con valori di default
+	const { threshold = 0.5, rootMargin = "0px 0px 0px 0px", disabled = false, triggerOnce = false } = options;
+
 	useEffect(() => {
-		// Opzioni di default + merge con quelle passate dall'utente
-		const defaultOptions = {
-			threshold: 0.5,
-			rootMargin: "0px 0px 0px 0px",
-			// disabled: false,
-		};
+		// Se l'hook è disabilitato, non facciamo niente
+		if (disabled) {
+			return;
+		}
 
-		const observerOptions = { ...defaultOptions, ...options };
+		// Creazione dell'observer
+		observerRef.current = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const target = entry.target;
 
-		// if (disabled) {
-		// 	return;
-		// }
+					if (entry.isIntersecting) {
+						target.classList.add("is_visible");
 
-		observerRef.current = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				const target = entry.target;
-
-				if (entry.isIntersecting) {
-					target.classList.add("is_visible");
-				} else {
-					target.classList.remove("is_visible");
-				}
-			});
-		}, observerOptions);
+						if (triggerOnce) {
+							observerRef.current?.unobserve(target);
+						}
+					} else if (!triggerOnce) {
+						target.classList.remove("is_visible");
+					}
+				});
+			},
+			{
+				threshold,
+				rootMargin,
+			}
+		);
 
 		// Seleziona gli elementi
 		const items = document.querySelectorAll(selector);
@@ -48,5 +54,12 @@ export default function useIntersection(selector, options = {}) {
 				observerRef.current.disconnect();
 			}
 		};
-	}, [selector, options.disabled]); // Dipendenza dal selector (opzioni le gestiamo internamente)
+	}, [selector, threshold, rootMargin, disabled, triggerOnce]);
+
+	// Cleanup extra quando `disabled` diventa true
+	useEffect(() => {
+		if (disabled && observerRef.current) {
+			observerRef.current.disconnect();
+		}
+	}, [disabled]);
 }

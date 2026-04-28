@@ -1,4 +1,4 @@
-// "use client"; // marks module for full browser execution
+"use client"; // marks module for full browser execution
 //
 // import { ProjectSectionComponent } from "@/components/<filename>"; // File import statement
 
@@ -37,6 +37,7 @@
 // import { getServer } from "@/lib/server"; // Provide server-only values to the current component {SSR}
 // import { useClient } from "@/providers/Client"; // Provide client-only values to the current component {CSR}
 // import { useTranslate } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
+import useIntersection from "@/hooks/useIntersection";
 //
 // FUTURE REFERENCE IMPORTS:
 // import { Alert, Dialog, Input } from "@/components/ui"; // Accessible component primitives (Radix-based, styled with Tailwind) {CSR}
@@ -50,17 +51,24 @@ import "./ProjectSection.scss";
 // ## ############################################
 // ===============================================
 // imghover, projtitle, projsub, projabs, width, height
-export async function ProjectSectionComponent({ ...props }) {
+export function ProjectSectionComponent({ ...props }) {
 	// const ssr = await getServer();
 	// const csr = useClient();
 	// const lang = useTranslate()["lang"];
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 
+	useIntersection(".obj_project_txt", {
+		threshold: 0.2,
+		rootMargin: "0px 0px 20px 0px",
+		disabled: false,
+		triggerOnce: true,
+	});
+
 	return (
 		<>
 			<div className="project_section_component">
 				<div className="block_cont">
-					<div className="size_wrap pt-8">
+					<div className="size_wrap pt-6">
 						<div className="row">
 							<div className="d-flex col-12 col-lg-7 justify-content-center align-items-center">
 								<img
@@ -70,10 +78,12 @@ export async function ProjectSectionComponent({ ...props }) {
 									height={props.height}></img>
 							</div>
 						</div>
-						<div className="row pt-4 fx slide fade bottom">
+						<div className="obj_project_txt row pt-3 pt-md-6">
+							{" "}
+							{/* fx slide fade bottom */}
 							<div className="col-12 col-md-6 row">
 								<div className="col-3 col-lg-2">
-									<h4>Project</h4>
+									<h4 className="lh-base">Project</h4>
 								</div>
 								<div className="col-9 col-lg-8">
 									<h3>{props.projtitle}</h3>
@@ -83,7 +93,7 @@ export async function ProjectSectionComponent({ ...props }) {
 							<div className="col-12 col-md-6 row">
 								<div className="col-md-10 col-lg-7 ms-auto pt-4 pt-md-0">
 									<h5 className="pb-5">{props.projabs}</h5>
-									<a href={`/frames/${props.id}`} className="d-flex">
+									<a href={`/frames/${props.id}`} className="color_gray_medium d-flex">
 										See Project
 										<img className="ps-2" src="/images/icons/arrow.svg" />
 									</a>

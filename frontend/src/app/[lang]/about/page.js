@@ -51,32 +51,32 @@ export default async function AboutPage({ params }) {
 					<section className="cont_space_1">
 						<div className="cont_mw_1">
 							<HeroSectionComponent>
-								<div className="el_text obj_hero_txt col-lg-11 pe-lg-4 pt-3 pb-6">
+								<div className="el_text obj_txt col-lg-11 pe-lg-4 pt-3 pb-6 pb-md-10">
 									<h1>
 										Our team may be just me, but together we make pixels, circuits, and ideas come to
 										life: mostly with soldering and coffee.
 									</h1>
 								</div>
 								<div className="row">
-									<div className="el_num col-md-4 text-white fx reveal right">
+									<div className="el_num col-md-4 pb-md-6 text-white fx reveal right">
 										<p className="obj_numb biggest text-black">
 											{translates?.[ssr.page]?.["glowing_pixels"]?.[lang] ?? "Translate fallback"}
 										</p>
-										<p className="text-black">Glowing pixels in our frames</p>
+										<p className="text-black pt-4">Glowing pixels in our frames</p>
 									</div>
-									<div className="el_num pt-4 pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
+									<div className="el_num pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
 										<p className="obj_numb biggest text-black">
 											{translates?.[ssr.page]?.["crafted_frames"]?.[lang] ?? "Translate fallback"}
 										</p>
-										<p className="text-black">Crafted frames</p>
+										<p className="text-black pt-4">Crafted frames</p>
 									</div>
-									<div className="pt-4 pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
+									<div className="pt-md-0 ps-md-4 col-md-4 text-white fx reveal right">
 										<p className="obj_nubm biggest text-black">
 											{translates?.[ssr.page]?.["arduino_boards"]?.[lang] ?? "Translate fallback"}
 										</p>
-										<p className="text-black">Arduino boards sacrificed</p>
+										<p className="text-black pt-4">Arduino boards sacrificed</p>
 									</div>
-									<div className="el_team row mt-4 pt-5 ">
+									<div className="el_team row mt-4 mb-9 pt-[2rem] ">
 										<div className="col-md-6 pb-5">
 											<h1>Our Team</h1>
 											<div className="d-none d-md-block pt-4">

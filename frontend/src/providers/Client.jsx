@@ -54,7 +54,7 @@ async function fetchUser(lang) {
 			if (userResponse.status === 401) {
 				return undefined; // Not logged in
 			}
-			console.error(`User fetch failed with status: ${userResponse.statusText}`);
+			// console.error(`User fetch failed with status: ${userResponse.statusText}`);
 			return undefined;
 		}
 

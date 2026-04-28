@@ -51,7 +51,7 @@ export default async function HomePage({ params }) {
 									</h1>
 								</div>
 							</HeroSectionComponent>
-							<div className="obj_proj_title mt-10 pt-6">
+							<div className="obj_proj_title mt-9 pt-[2rem]">
 								<h2>Latest works</h2>
 							</div>
 							{data.map((p) => (

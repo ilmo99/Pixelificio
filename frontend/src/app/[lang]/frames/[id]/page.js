@@ -17,9 +17,10 @@ import * as constants from "@/config/constants"; // Global constants shared acro
 import { getDictionary } from "@/app/dictionaries"; // Fetch translation dictionary based on language
 import { TranslateProvider } from "@/providers/Translate"; // Provides translation context and hook access for `lang` and `translates`
 
+import { HeroSectionComponent } from "@/components/blocks/HeroSection";
+
 // 4. Relative internal (same directory)
 import "./page.scss";
-// import { DetailComponent } from "@/components/blocks/DetailComponent";
 import mockdata from "mockdata.json";
 // ===============================================
 // ## ############################################
@@ -57,8 +58,8 @@ export default async function DetailPage({ params }) {
 			<div className="detail_page">
 				<div className="page_cont">
 					<section className="cont_space_1">
-						<div className="cont_mw_1 pb-5">
-							<p>
+						<div className="cont_mw_1 py-5">
+							<p className="big">
 								Non abbiamo trovato il quadro che stavi cercando perché la porta 3000 era chiusa purtroppo :(
 							</p>
 						</div>
@@ -72,45 +73,44 @@ export default async function DetailPage({ params }) {
 			<div className="detail_page">
 				<div className="page_cont">
 					<section className="cont_space_1">
-						<div className="cont_mw_1 pb-5">
+						<div className="cont_mw_1 pb-7">
 							<div className="detail_component">
-								<div className="el_img d-none d-md-block pb-3 pt-6 fx slide right edge left slow">
-									<img src="/images/logos/iride.svg" alt="Iride logo" />
-								</div>
-								<div className="el_title py-6">
-									<h1>{title.title}</h1>
-								</div>
-								<div className="el_section row  justify-content-center justify-content-md-between">
-									<div className="el_parag col-12 col-md-6 col-lg-8">
-										<div className="el_txt pb-2 pb-lg-4">
-											<div dangerouslySetInnerHTML={{ __html: title.intro_body_formatted }}></div>
+								<HeroSectionComponent>
+									<div className="el_title pt-3 pb-7">
+										<h1>{title.title}</h1>
+									</div>
+									<div className="el_section row  justify-content-center justify-content-md-between">
+										<div className="el_parag col-12 col-md-6 col-lg-8">
+											<div className="el_txt pb-2 pb-lg-4">
+												<div dangerouslySetInnerHTML={{ __html: title.intro_body_formatted }}></div>
+											</div>
+											<div className="el_txt obj_gray_txt py-2 py-lg-4">
+												<div dangerouslySetInnerHTML={{ __html: title.body_formatted }}></div>
+											</div>
+											<div className="el_griglia_img row">
+												<div className="col-6">
+													<img></img>
+												</div>
+												<div className="col-6">
+													<img></img>
+												</div>
+											</div>
+											<div className="el_griglia_img row">
+												<div className="col-6">
+													<img></img>
+												</div>
+												<div className="col-6">
+													<img></img>
+												</div>
+											</div>
 										</div>
-										<div className="el_txt obj_gray_txt py-2 py-lg-4">
-											<div dangerouslySetInnerHTML={{ __html: title.body_formatted }}></div>
-										</div>
-										<div className="el_griglia_img row">
-											<div className="col-6">
-												<img></img>
-											</div>
-											<div className="col-6">
-												<img></img>
-											</div>
-										</div>
-										<div className="el_griglia_img row">
-											<div className="col-6">
-												<img></img>
-											</div>
-											<div className="col-6">
-												<img></img>
-											</div>
+										<div className="el_img_parag obj_cont_img col-12 col-md-5 col-lg-3 pt-5 pt-md-0">
+											<img
+												className="obj_img"
+												src={`${constants.MEDIA_PATH}/uploads/${title.media[0].image_path}`}></img>
 										</div>
 									</div>
-									<div className="el_img_parag obj_cont_img col-12 col-md-5 col-lg-3 pt-5 pt-md-0">
-										<img
-											className="obj_img"
-											src={`${constants.MEDIA_PATH}/uploads/${title.media[0].image_path}`}></img>
-									</div>
-								</div>
+								</HeroSectionComponent>
 							</div>
 						</div>
 					</section>

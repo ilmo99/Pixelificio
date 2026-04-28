@@ -59,8 +59,8 @@ export function HeroSectionComponent({ children }) {
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 
 	useIntersection(".obj_iride", {
-		thresold: 0,
-		rootMargin: "-100px 0px -60px 0px",
+		threshold: 0,
+		rootMargin: "-200px 0px -60px 0px",
 	});
 
 	return (
@@ -68,7 +68,7 @@ export function HeroSectionComponent({ children }) {
 			<div className="hero_section_component">
 				<div className="block_cont">
 					<div className="block_wrap flex-column pt-3">
-						<div className="el_img d-none d-md-block py-3 ">
+						<div className="el_img d-none d-md-block pt-3 pb-[2rem] ">
 							<img className="el_hero_img obj_iride" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
 						{children}

@@ -5,11 +5,15 @@
 // <<<<< Controllers — END
 
 .project_section_component {
-	// .obj_example {
-	// 	@at-root .grid_cont:not(:has(.example_target)) #{&} {
-	// 		background-color: $variable_name;
-	// 	}
-	// }
+	.obj_project_txt {
+		transform: translateY(160px);
+		opacity: 0;
+		transition: all 1500ms ease-in-out 300ms;
+		&.is_visible {
+			transform: translateY(0px);
+			opacity: 1;
+		}
+	}
 }
 
 /////

@@ -63,7 +63,7 @@ export async function AboutComponent({ lang }) {
 						<div className="el_img d-none d-md-block py-3 fx slide right edge left slow">
 							<img className="el_hero_img" src="/images/logos/iride.svg" alt="Iride logo" />
 						</div>
-						<div className="el_text obj_hero_txt col-lg-11 pe-lg-4 pt-3 pb-6">
+						<div className="el_text obj_txt col-lg-11 pe-lg-4 pt-3 pb-6">
 							<h1>
 								Our team may be just me, but together we make pixels, circuits, and ideas come to life:
 								mostly with soldering and coffee.

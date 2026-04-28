@@ -61,40 +61,16 @@ export function GridComponent({ mockdata }) {
 	const [isHovered, setHover] = useState(null);
 	const [isTouch, setIsTouch] = useState(false);
 
-	// useIntersection(".obj_grid_item", {
-	// 	thresold: 0.8,
-	// });
-
-	const observerRef = useRef(null);
-
 	useEffect(() => {
 		const hoverDevice = window.matchMedia("(hover: hover) and (pointer: fine)");
 		setIsTouch(!hoverDevice.matches);
-
-		if (!hoverDevice.matches) {
-			observerRef.current = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						const target = entry.target;
-						if (entry.isIntersecting) {
-							target.classList.add("is_visible");
-						} else {
-							target.classList.remove("is_visible");
-						}
-					});
-				},
-				{ threshold: 0.8 }
-			);
-			const items = document.querySelectorAll(".obj_grid_item");
-			items.forEach((item) => observerRef.current?.observe(item));
-		}
-
-		return () => {
-			if (observerRef.current) {
-				observerRef.current.disconnect();
-			}
-		};
 	}, []);
+
+	useIntersection(".obj_grid_item", {
+		thresold: 0.8,
+		rootMargin: "-100px 0px -100px 0px",
+		disabled: !isTouch,
+	});
 
 	return (
 		<>

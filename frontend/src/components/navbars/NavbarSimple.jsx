@@ -57,7 +57,6 @@ export const NavbarSimple = function ({ ...props }) {
 	const [isOpen, setIsOpen] = useState(false);
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 
-	
 	return (
 		<>
 			<div className="navbar_component cont_space_1">
@@ -91,15 +90,15 @@ export const NavbarSimple = function ({ ...props }) {
 						</button>
 					</div>
 					<div className={`obj_mobileMenu d-md-none ${isOpen ? "open" : ""}`}>
-						<Link className="obj_mobileLink" href="/" onClick={() => setIsOpen(!isOpen)}>
+						<a className="obj_mobileLink" href="/" onClick={() => setIsOpen(!isOpen)}>
 							Home
-						</Link>
-						<Link className="obj_mobileLink" href="/frames" onClick={() => setIsOpen(!isOpen)}>
+						</a>
+						<a className="obj_mobileLink" href="/frames" onClick={() => setIsOpen(!isOpen)}>
 							Frames
-						</Link>
-						<Link className="obj_mobileLink" href="/about" onClick={() => setIsOpen(!isOpen)}>
+						</a>
+						<a className="obj_mobileLink" href="/about" onClick={() => setIsOpen(!isOpen)}>
 							About
-						</Link>
+						</a>
 					</div>
 				</nav>
 			</div>

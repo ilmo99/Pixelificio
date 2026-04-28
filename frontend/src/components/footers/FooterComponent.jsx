@@ -58,15 +58,15 @@ export function FooterComponent({ ...props }) {
 	// const translates = useTranslate()["translates"]; // E.g., {translates?.[csr.page]?.["<code>"]?.[lang] ?? "Translate fallback"}
 
 	useIntersection(".obj_logo", {
-		thresold: 0,
-		rootMargin: "0px 0px -60px 1000px",
+		threshold: 0,
+		rootMargin: "0px 0px -90px 1000px",
 	});
 
 	return (
 		<>
 			<div className="footer_component cont_space_1">
 				<div className="cont_mw_1">
-					<div className="el_foot_title obj_foot_title row py-5 mt-6 mt-md-8">
+					<div className="el_foot_title obj_foot_title row py-4 mt-6 mt-md-4">
 						<h6 className="text-center">Curious how they look in your space?</h6>
 					</div>
 					<div className="el_foot_cont row py-4 py-lg-6">

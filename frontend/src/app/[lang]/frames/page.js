@@ -59,22 +59,33 @@ export default async function FramesPage({ params }) {
 						<div className="cont_mw_1">
 							<div>
 								<HeroSectionComponent mockdata={mockdata}>
-									<div className="el_text obj_txt py-3 row">
+									<div className="el_text obj_txt pt-3 pb-3 pb-xl-7 row">
 										<div className="col-12 col-xl-6">
-											<h1>Frames</h1>
+											<h1 className="lh-1">Frames</h1>
 										</div>
 										<div className="col-12 col-xl-6">
-											<h5 className="pt-5 pt-xl-0">
-												<i>Can a collection of pixel-based artworks capture memories and ideas?</i>{" "}
-												Pixelificio creates pieces that translate digital imagery into light. Explore
-												the collection to see how each frame is carefully designed, hand-soldered,
-												and composed to bring its concept to life.
+											<h5 className="pt-5 pt-xl-2">
+												<span className="fst-italic d-inline-block pe-1">
+													Can a collection of pixel-based artworks capture memories and ideas?
+												</span>
+												<span className="d-inline-block">
+													Pixelificio creates pieces that translate digital imagery into light.
+													Explore the collection to see how each frame is carefully designed,
+													hand-soldered, and composed to bring its concept to life.
+												</span>
 											</h5>
-											{data.map((p, i) => (
-												<div key={p.id} className={`pb-1 ${i == 0 && `pt-6`}`}>
-													<a href={`/frames/${p.id}`}>{p.title}</a>
-												</div>
-											))}
+											<div className="mt-2 pt-4">
+												{data.map((p, i) => (
+													// <div key={p.id} className={`pb-1 ${i == 0 && `pt-6`}`}>
+													<a
+														key={p.id}
+														className="color_gray_medium d-block pb-1"
+														href={`/frames/${p.id}`}>
+														{p.title}
+													</a>
+													// </div>
+												))}
+											</div>
 										</div>
 									</div>
 								</HeroSectionComponent>

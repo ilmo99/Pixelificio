@@ -181,7 +181,7 @@ a,
 .a {
 	color: black;
 	font-family: $font_body;
-	font-size: 1.2rem;
+	font-size: 1.25rem;
 }
 
 h1,
@@ -196,11 +196,11 @@ h1,
 		$source-vw-min: $reference-vw-min, // Minimum REFERENCE viewport width
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
-		$font-size-min: 4rem, // `font-size` on mobile viewport (< 575.98px)
-		$line-height-mobile: 0.8, // `line-height` multiplier on mobile viewport (< 575.98px)
+		$font-size-min: 2.75rem, // `font-size` on mobile viewport (< 575.98px)
+		$line-height-mobile: 1, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
 		$font-size-max: 4rem, // `font-size` on desktop viewport (> 576px)
-		$line-height-desktop: 0.8, // `line-height` multiplier on desktop viewport (> 576px)
+		$line-height-desktop: 1, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
 		// $important: "!important", // uncomment to add `!important` to the string
@@ -294,10 +294,10 @@ h5,
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
 		$font-size-min: 1.15rem, // `font-size` on mobile viewport (< 575.98px)
-		$line-height-mobile: 1.1, // `line-height` multiplier on mobile viewport (< 575.98px)
+		$line-height-mobile: 1.2, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
 		$font-size-max: 1.15rem, // `font-size` on desktop viewport (> 576px)
-		$line-height-desktop: 1.1, // `line-height` multiplier on desktop viewport (> 576px)
+		$line-height-desktop: 1, // `line-height` multiplier on desktop viewport (> 576px)
 		// >>>>> EXTRA SETTINGS <<<<<
 		$line-height-dynamic: true, // enables fluid `line-height` when `true`
 		// $important: "!important", // uncomment to add `!important` to the string
@@ -388,7 +388,7 @@ p {
 		$source-vw-min: $reference-vw-min, // Minimum REFERENCE viewport width
 		$source-vw-max: $reference-vw-max, // Maximum REFERENCE viewport width
 		// >>>>> TYPOGRAPHY (MOBILE) <<<<<
-		$font-size-min: 2.5rem, // `font-size` on mobile viewport (< 575.98px)
+		$font-size-min: 5rem, // `font-size` on mobile viewport (< 575.98px)
 		$line-height-mobile: 1.5, // `line-height` multiplier on mobile viewport (< 575.98px)
 		// >>>>> TYPOGRAPHY (DESKTOP) <<<<<
 		$font-size-max: 5rem, // `font-size` on desktop viewport (> 576px)
